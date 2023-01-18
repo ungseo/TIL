@@ -166,24 +166,159 @@
 
 #함수에 숫자 주고 출력하기
 
-num = int(input())
-def BBQ(x):
-    for i in range(1,x+1):
-        print(i, end ='')
+# num = int(input())
+# def BBQ(x):
+#     for i in range(1,x+1):
+#         print(i, end ='')
 
-def KFC(x):
-    for i in range(7):
-        print(x*7)
+# def KFC(x):
+#     for i in range(7):
+#         print(x*7)
 
-if num % 2 == 1:
-    num2 = int(input())
-    BBQ(num2)
+# if num % 2 == 1:
+#     num2 = int(input())
+#     BBQ(num2)
 
-elif num == 0 :
-    print(0)
+# elif num == 0 :
+#     print(0)
 
-else:
-    string = input()
-    KFC(string)
+# else:
+#     string = input()
+#     KFC(string)
 
 
+#돌아오는 One Two
+
+# def one():
+#     num = int(input())
+#     return num
+
+# def two():
+
+#     string = input()
+#     return string
+
+# def main():
+#     a = one()
+#     b = two()
+#     return str(a)+b
+
+# print(main())
+
+#대각선 긋기
+
+# num = int(input())
+# lst = [[0]*4 for i in range(4)]
+
+
+# if num % 2 == 0 :
+#     j = 0
+#     for i in lst:
+#         i[j] = j+1
+#         j += 1
+# else:
+#     j, d = 3, 1
+#     for i in lst:
+#         i[j] = d
+#         j -= 1
+#         d += 1
+        
+# for i in range(4):
+#     for j in range(4):
+#         print(lst[i][j], end = ' ')
+#     print()
+
+# KFC 주문하기
+
+
+    
+# def KFC():
+#                               ##  80, Z
+#     a = chicken()             ##  90, Z
+#     b = coke()
+#     print(f'{a}{b}')
+
+# def chicken():
+#     num = int(input())
+#     return num + 10
+
+# def coke():
+#     string = input()
+#     return string
+
+# KFC()
+
+#사전순으로 큰 문자 찾기
+
+# def getChar():
+#     A, B = input().split()
+#     if ord(A) > ord(B) :
+#         return A
+#     else :
+#         return B
+
+# result = getChar()
+# print(result)
+
+#번호 순서대로
+
+# num = int(input()) # 숫자 한개를 입력 받아주세요
+# lst = [[0,0,0],[0,0,0],[0,0,0]]   ## 3x3 2차원배열 
+# arr = range(1,19)   ##  [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
+
+
+
+# if num % 5 == 1:
+#     idx = 8
+#     for i in range(3):
+#         for j in range(3):
+#             lst[i][j] = arr[idx]
+#             idx -= 1
+
+# elif num % 5 == 2 :
+#     idx2 = 6
+#     for i in range(3) :
+#         for j in range(3):
+#             lst[i][j] = arr[idx2]
+#             idx2 += 1
+#         idx2 -= 6
+# else :
+#     idx3 = 9
+#     for i in range(3):
+#         for j in range(3):
+#             lst[i][j] = arr[idx3]   ## 9번 넣고, 12번 넣고, 15번 넣고  인덱스 3씩증가
+#             idx3 += 3                ## 10번 넣고,13번 넣고, 16번 넣고  인덱스 -5 감소후 3씩증가
+#         idx3 -= 8                            
+
+# ## 출력
+# for i in range(3):
+#     for j in range(3):
+#         print(lst[i][j], end = ' ')
+#     print()
+
+# 짝수 홀수 함수
+
+# a, b = map(int,input().split())
+
+# def printData(x):
+#     print(x)
+
+# def even(x):
+#     return printData(x*2)
+
+# def odd(x):
+#     return printData(x-10)
+
+
+# if (a//b) % 2 == 0 :
+#     even((a//b))
+# else :
+#     odd((a//b))
+    
+# printData(a+b)
+
+lst1 = [1,2,3,4,5]
+lst2 = [6,7,8,9,10]
+
+a =lst1 + lst2 
+print(a)

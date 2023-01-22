@@ -332,12 +332,300 @@
 # st = ''.join(list(map(str,number)))
 # print(st)
 
-arr = [[1, 2, 3], 
-       [4, 5, 6],
-       [7, 8, 9],
-       [10, 11, 12],
-      ]
+# arr = [[1, 2, 3], 
+#        [4, 5, 6],
+#        [7, 8, 9],
+#        [10, 11, 12],
+#       ]
 
-narr =[[n**2 for n in row] for row in arr]
-sarr = [n for i in arr for n in i]
-print(sarr)
+# narr =[[n**2 for n in row] for row in arr]
+# sarr = [n for i in arr for n in i]
+# print(sarr)
+
+##암호문자 출력하기
+# lst= []
+# for i in range(4):
+#       lst.append(list(map(int,input().split())))
+
+# for i in range(4):
+#       for j in range(4):
+#             if lst[i][j] % 2 == 0 and lst[i][j] != 0 :
+#                   lst[i][j] = '#'
+#                   print(lst[i][j],end = '')
+#             elif lst[i][j] == 0:
+#                   lst[i][j] = '!'
+#                   print(lst[i][j],end='')
+#             else :
+#                   lst[i][j] = '@'
+#                   print(lst[i][j],end = '')
+      
+#       print()
+
+## 함수안에서 CountDown
+# def INPUT():
+#       num = int(input())
+#       return num
+# def CountDown(num):
+#       for i in range(num,0,-1):
+#             print(i,end= ' ')
+
+# CountDown(INPUT())
+
+# lst = [[0 for i in range(5)] for j in range(5)]
+# n = 1
+# for j in range(4,-1,-1):
+#       for i in range(5):
+#             lst[i][j] = n
+#             n += 1
+
+# number = int(input())
+# for i in range(5):
+#       lst[number][i] = number
+
+
+# for i in range(5):
+#       for j in range(5):
+#             print(lst[i][j],end = ' ')
+#       print()
+
+# class Fruit():
+#       def size():
+#             size = int(input('과일의 사이즈를 입력하세요.'))
+#             return size
+#       banana_price = 250
+#       apple_prince = 500
+# apple =Fruit()
+# banana = Fruit()
+# a = apple.size()
+# b = banana.size()
+
+# def INPUT():
+#       st =input()
+#       if CHECK(st) == 1:
+      
+#             print('있음')
+#       else:
+#             print('없음')
+
+# def CHECK(x):
+#       for i in lst:
+#             if i.count(x) != 0:
+#                   return 1
+#             else :
+#                   return 2
+
+# lst = [['D','A','C','C','D'],['S','D','F','A','E'],['E','E','T','J','H']]
+
+# INPUT()
+
+# arr = list(map(int,input().split()))
+
+# lst = [[0 for i in range(4)] for j in range(3)]
+
+# for i in range(3):
+#       n = arr[i]
+      
+#       for j in range(4):
+#             lst[i][j] = n  ## arr j = A
+#             n += 1
+#             print(lst[i][j],end = ' ')
+      
+#       print()
+# lst = [[0 for i in range(3)] for j in range(6)]
+# n = 10
+# for i in range(3):
+#       for j in range(6):
+#             lst[j][i] = n  ## lst[0~5][0]
+#             n += 1
+# a, b = map(int,input().split())
+
+# for i in range(a,b+1):
+#       for j in range(3):
+#             lst[i][j] = 7
+
+# for i in range(6):
+#       for j in range(3):
+#             print(lst[i][j],end=' ')
+#       print()
+
+# def aToZ():
+#       st = ord(input())
+#       if st > 77.5 :          ## ord('Z')- ord('A') = 25
+#             return 'Z'        ## 65+ 25/2 == 중간값
+#       else:
+#             return 'A'
+
+# print(aToZ())
+
+# def Calculator():
+#       score = int(input())
+#       if score >= 90 :
+#             return 'A'
+#       elif score >= 80:
+#             return 'B'
+#       elif score >= 70:
+#             return 'C'
+#       else :
+#             return 'D'
+
+# print(Calculator())
+
+# arr = [[1,0,0,0,0],[1,0,1,0,0],[1,1,0,1,0],[1,0,1,0,0],[0,1,0,0,1],[0,0,0,1,0],[1,1,0,0,0]]
+
+
+
+# def INPUT():
+#       num = int(input())
+#       return num
+
+# def PROCESS(x):
+#       ea = 0
+#       for i in range(7):
+#             if arr[i][x] == 1:
+#                   ea += 1
+#       return ea
+      
+# def OUTPUT(x):
+#       print(x)
+
+# OUTPUT(PROCESS(INPUT()))
+
+## run 함수에서 2차배열 값 채우기
+
+# def main():
+#       num = int(input())
+#       return num
+
+# def run(x):
+#       lst = [[0 for i in range(3)] for j in range(3)]
+#       n = 1
+#       if x < 10 :
+#             for i in range(3):
+#                   for j in range(3):
+#                         lst[i][j] = n
+#                         n += 1
+                 
+#       else :
+#             n = 1
+#             for i in range(3):
+#                   for j in range(2,-1,-1):
+#                         lst[i][j] =n     
+#                         n += 1
+              
+#       for i in range(3):
+#             for j in range(3):
+#                   print(lst[i][j],end ='')
+#             print()
+# run(main())
+
+
+# def yesOrNo():
+#       num = int(input())
+#       if num % 3 == 0:
+#             return 7
+#       elif num % 3 == 1:
+#             return 35
+#       else :
+#             return 50
+
+# print(yesOrNo())
+
+## 함수로부터 값 보내고 받기
+
+# def Input():
+#       num = int(input())
+#       return num
+
+# def calc (x,):
+#       lst = list(map(int,input().split()))
+#       return sum(lst)
+
+
+# a = Input()
+# b = Input()
+# c = Input()
+
+# def sum(a,b):
+#       return a+b
+
+# def comp(a,b):
+#       return a-b
+
+# def Print(a,b):
+#       print(f'합:{a}')
+#       print(f'차:{b}')
+
+# a, b = map(int,input().split())
+
+# hap =sum(a,b)
+# cha = comp(a,b)
+# Print(hap,cha)
+
+# a, gd = map(str,input().split())
+# a = int(a)
+# gd = str(gd)
+
+
+# p = a
+# t = gd
+# print(p, t)
+
+# a,b,c = input().split()
+
+# print(chr(ord(a)+1),chr(ord(b)+1),chr(ord(c)+1))
+# # 
+# lst = list(map(int,input().split()))
+
+# print('''MAX={0}
+# MIN={1}'''.format(max(lst),min(lst)))
+
+# lst = list(input().split())
+
+# big = []
+# small =[]
+
+# for i in lst:
+#       if 65 <= ord(i) <= 90:
+#             big.append(i)
+#       elif 97 <= ord(i) <= 122:
+#             small.append(i)
+# a= ''.join(big)
+# b = ''.join(small)
+
+
+# print(f'big={a}')
+# print(f'small={b}')
+
+# lst = [[3,2,6,2,4],[1,4,2,6,5]]
+
+# num = int(input())
+# def KFC(x):
+#       if x in lst[0] or x in lst[1]:
+#             return 1
+#       else :
+#             return 0
+
+# if KFC(num) == 1:
+#       print('값이 존재합니다')
+# else :
+#       print('값이 없습니다')
+
+# lst = list(map(str(input().split(''))))
+# print(lst)
+
+lst = [[1,3,6,2],[4,2,4,5],[6,3,7,3],[1,5,4,6]]
+
+num = int(input())
+
+select = []
+
+for i in range(4):
+      for j in range(4):
+            if lst[i][j] > num:
+                  select.append(lst[i][j])
+                  print(lst[i][j],end = ' ')
+
+a,b=map(int,input().split())
+
+a,b = b,a
+print(b,a)

@@ -613,19 +613,170 @@
 # lst = list(map(str(input().split(''))))
 # print(lst)
 
-lst = [[1,3,6,2],[4,2,4,5],[6,3,7,3],[1,5,4,6]]
+# lst = [[1,3,6,2],[4,2,4,5],[6,3,7,3],[1,5,4,6]]
 
-num = int(input())
+# num = int(input())
 
-select = []
+# select = []
 
-for i in range(4):
-      for j in range(4):
-            if lst[i][j] > num:
-                  select.append(lst[i][j])
-                  print(lst[i][j],end = ' ')
+# for i in range(4):
+#       for j in range(4):
+#             if lst[i][j] > num:
+#                   select.append(lst[i][j])
+#                   print(lst[i][j],end = ' ')
 
-a,b=map(int,input().split())
+# a,b=map(int,input().split())
 
-a,b = b,a
-print(b,a)
+# a,b = b,a
+# print(b,a)
+
+## 범위에 드는 문자 찾기
+
+# lst = ['D','F','G','D','A','Q']
+
+# a, b = input().split()
+# scope = range(ord(a),ord(b)+1)
+# ea = 0
+# for i in lst:
+#       if ord(i) in scope:
+#             print('발견!!!')
+#             break
+#       else:
+#             ea += 1
+# if ea == 6 :
+#       print('미발견!!!')
+
+
+## 배열에 숫자 Counting 하기
+# lst = [[1,1,1],[1,2,1],[3,6,3]]
+
+# def Count(x):
+#       ct = 0
+#       for i in lst:
+#             ct += i.count(x)
+#       return ct
+# num = int(input())
+# print(Count(num))
+
+# lst =list('A1115Awz')
+
+# st = input()
+
+# num = lst.count(st)
+
+# if num == 3 :
+#       print('THREE')
+# elif num == 2:
+#       print('TWO')
+# elif num == 1:
+#       print('ONE')
+# else :
+#       print('NOTHING')
+
+## 입력받은 글자를 세밀히 세보기
+
+# lst = [['a','b','a','c','z'],['c','t','a','c','d'],['c','c','c','c','a']]
+
+# st = input()
+# ea = 0 
+# for i in lst:
+#       ea += i.count(st)
+
+# if ea >= 7 :
+#       print('세상에')
+# elif ea >= 5 :
+#       print('와우')
+# elif ea >= 3 :
+#       print('이야')
+# else : 
+#       print('이런')
+
+## 글자 바꾸어서 출력하기
+
+# lst = list(map(int,input().split()))
+
+# arr = [[0 for i in range(3)] for j in range(2)]
+# n = 0
+# for i in range(2):
+#       for j in range(3):
+#             arr[i][j] = lst[n]
+#             if lst[n] == 0:
+#                   print('#',end='')
+#             else :
+#                   print(lst[n],end='')
+#             n += 1
+#       print()            
+            
+# lst = [['a','b','E'],['E','2','W'],['3','2','4']]
+
+# for i in range(3):
+#       for j in range(3):
+#             if lst[i][j].islower():
+#                   print(lst[i][j].upper(),end = ' ')
+            
+#             elif lst[i][j].isupper():
+#                   print(lst[i][j].lower(),end = ' ')
+            
+#             else:
+#                   print(chr(ord(lst[i][j])+5),end = ' ')
+#       print()
+
+# lst = [['a','b','d'],['e','w','z'],['q','v','a']]
+
+# def Input():
+#       st = input()
+#       Process(st)
+
+# def Process(x): 
+#       low_x = x.lower()
+#       ea = 0
+#       for i in lst:
+#             ea += i.count(low_x)
+#       if ea != 0:
+#             print('존재')
+#       else:
+#             print('없음')
+# Input()
+
+##배열값을 바꾼 후 MAX + MIN 구하기
+
+# lst =[[3,1,6],[7,8,4],[9,2,3]]
+
+# a,b,c = map(int,input().split())
+
+# lst[a][b] = c
+
+
+# maxlst = []
+# for i in lst:
+#       maxlst.append(max(i))
+#       M = max(maxlst)
+
+# minlst =[]
+# for i in lst:
+#       minlst.append(min(i))
+#       m = min(minlst)
+
+# print(M+m)
+
+## 다른 배열에 값 옮기기
+default_lst = [[0 for i in range(3)] for j in range(2)]
+lst = list(map(int,input().split()))
+idx = 0
+new_lst = []
+for i in range(1,-1,-1):
+      for j in range(2,-1,-1):
+            default_lst[i][j] = lst[idx]
+            idx += 1
+idx = 0
+for i in range(2):
+      for j in range(3):
+            new_lst.append(default_lst[i][j])
+            idx += 1
+
+new_lst[0],new_lst[5] = new_lst[5],new_lst[0]
+
+print(*new_lst)
+
+
+

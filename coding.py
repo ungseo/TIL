@@ -760,23 +760,372 @@
 # print(M+m)
 
 ## 다른 배열에 값 옮기기
-default_lst = [[0 for i in range(3)] for j in range(2)]
-lst = list(map(int,input().split()))
-idx = 0
-new_lst = []
-for i in range(1,-1,-1):
-      for j in range(2,-1,-1):
-            default_lst[i][j] = lst[idx]
-            idx += 1
-idx = 0
-for i in range(2):
-      for j in range(3):
-            new_lst.append(default_lst[i][j])
-            idx += 1
+# default_lst = [[0 for i in range(3)] for j in range(2)]
+# lst = list(map(int,input().split()))
+# idx = 0
+# new_lst = []
+# for i in range(1,-1,-1):
+#       for j in range(2,-1,-1):
+#             default_lst[i][j] = lst[idx]
+#             idx += 1
+# idx = 0
+# for i in range(2):
+#       for j in range(3):
+#             new_lst.append(default_lst[i][j])
+#             idx += 1
 
-new_lst[0],new_lst[5] = new_lst[5],new_lst[0]
+# new_lst[0],new_lst[5] = new_lst[5],new_lst[0]
 
-print(*new_lst)
+# print(*new_lst)
 
 
+## 문장 입력받고 출력하기
 
+# st =input()
+
+# for i in range(5):
+#       print(st)
+
+## 두 문장의 길이는?
+
+# char1, char2 = input(), input()
+
+# print(len(char1),len(char2))
+
+## 네 줄 카운트다운
+
+# num = int(input())
+
+# for i in range(4):
+#       for j in range(4):
+#             print(num,end='')
+#       num -= 1      
+#       print()
+
+## one two three 빌딩
+
+# num = int(input())
+# a = 1
+# for i in range(num):
+#       for j in range(3):
+#             print(a,end='')
+#             a += 1
+#       a = 1
+#       print()
+
+## 중첩 for문 활용하기
+
+# num = int(input())
+
+# lst = [[0 for i in range(4)] for j in range(3)]
+
+# for i in range(3):
+#       for j in range(4):
+#             if  (i == 0 and (j == 0 or j == 1)) or (i == 1 and j == 0) :
+#                   print(' ',end ='')
+#                   continue
+#             lst[i][j] = num
+#             print(lst[i][j],end ='')
+#             num += 1
+#       print()
+
+## 문자의 위치를 구해주는 함수 만들기
+
+# lst = list('MINQUEST')
+
+# def Length(x):
+#       return lst.index(x)
+
+# a1 = input()
+# a2 = input()
+# a3 = input()
+
+# print(f'{a1}={Length(a1)}')
+# print(f'{a2}={Length(a2)}')
+# print(f'{a3}={Length(a3)}')
+
+## 문장에서 세 문자 counting
+# st = input()
+
+# s1 = input()
+# s2 = input()
+# s3 = input()
+
+# res1 = st.count(s1)
+# res2 = st.count(s2)
+# res3 = st.count(s3)
+
+# print(f'{s1}={res1}')
+# print(f'{s2}={res2}')
+# print(f'{s3}={res3}')
+
+## 범위 내 문자들 따로 빼두기
+
+# lst = list('DATAPOWER')
+# arr = []
+
+# a, b = list(map(int,input().split()))
+# flag = a <= b
+
+# if flag:
+#       arr.append(lst[a:b+1])
+
+# print(''.join(arr[0]))
+
+## 중첩 2중 FOr문으로 배열 채우기
+
+# lst = [[0 for i in range(3)] for j in range(3)]
+
+# num = input()
+
+# if num.isdigit() == True :
+#       start = 6
+#       for i in range(3):
+#             for j in range(3):
+#                   if (i == 1 and j == 0) or (i == 2 and (j == 0 or j == 1)):
+#                         continue
+#                   lst[i][j] = start
+#                   start -= 1
+
+# elif num.isupper():
+#       start = 1
+#       for i in range(2,-1,-1):
+#             for j in range(3):
+#                   if (i == 0 and (j == 1 or j == 2)) or (i == 1 and j == 2):
+#                         continue
+#                   lst[i][j] = start
+#                   start += 1
+
+# for i in range(3):
+#       for j in range(3):
+#             if lst[i][j] == 0 :      
+#                   print(' ',end = '')
+#             else :
+#                   print(lst[i][j],end ='')
+#       print()
+
+## 한줄로 문자 채우기
+
+# a,b = list(input().split())
+
+# I =int(a)-1
+# S_num = ord(b)
+# lst = [[0 for i in range(5)] for j in range(5)]
+
+# for i in range(4,-1,-1):
+#       lst[I][i] = chr(S_num)
+#       S_num += 1
+
+# for i in range(5):
+#       for j in range(5):
+#             print(lst[i][j],end='')
+#       print()
+
+## 배열에서 입력받은 값 찾아내기
+
+# lst = [['D','A','D'],['Q','W','Q'],['A','S','D'],['A','S','D']]
+
+# st = input()
+
+
+# def Find(x):
+#       not_in = 0
+#       for i in lst:
+#             if x not in i:
+#                   not_in += 1
+#                   continue
+#             else :
+#                   print('존재')
+#                   break
+#       if not_in == 4 :
+#             print('없음')
+
+# Find(st)
+
+## 테두리 채우기
+
+# lst = [[0 for i in range(5)] for j in range(5)]
+
+# num = int(input())
+
+# for i in range(5):
+#       for j in range(5):
+#             if (j in range(1,4)) and (i in range(1,4)):     ## 1,2,3행의 1,2,3열일때
+#                   print('_',end ='')
+#             else:
+#                   lst[i][j] = num
+#                   print(num,end='')
+            
+            
+            
+#       print()
+
+## 마법의 현황판  
+
+# 좌표입력 값에 1더하고 만약 좌표값이 10이되면 0으로 초기화. (5번반복)
+
+# magic_lst = [[4,5,4,5,4],[8,9,8,9,8],[1,2,1,2,1],[4,5,4,5,4],[6,7,6,7,6]]
+
+# for i in range(5):
+#       y,x = list(map(int,input().split()))
+#       magic_lst[y][x] = magic_lst[y][x] + 1
+      
+#       if magic_lst[y][x] == 10 :
+#             magic_lst[y][x] = 0           ## 좌표값 초기화
+
+# for i in range(5):
+#       for j in range(5):
+#             print(magic_lst[i][j],end='')
+#       print()
+
+# st =input()
+
+# print(len(st))
+# print(st.count(st[-1]))
+
+# a1 = input()
+# a2 = input()
+# a3 = input()
+# lst = [a1,a2,a3]
+
+# def INdex():
+#       temp = []
+#       for i in lst:
+            
+#             temp.append(len(i))
+#       return temp.index(max(temp))
+
+# print(lst[INdex()])
+
+## 중첩 2중으로 배열 채우기
+
+# lst = [[0 for i in range(3)] for i in range(3)]
+# num = int(input())
+
+# for i in range(3):
+#       for j in range(3):
+#             if (i == 0 and (j == 0 or j == 1)) or (i == 1 and j == 0):
+#                   print(lst[i][j],end='')
+#                   continue
+#             else :
+#                   lst[i][j] = num
+#                   print(lst[i][j],end='')
+#                   num += 1
+#       print()
+
+# def getName():
+#       st1,st2 = input().split()
+#       return st1,st2
+# st1, st2 = getName()
+# if ord(st1) < ord(st2) :
+#       print(st1)
+# else:
+#       print(st2)
+
+## Call by reference 저주의 점술사
+
+# def moom(x):
+#       return x-4, x+3,x*2
+
+# age = int(input())
+
+# a,b,c = moom(age)
+
+# print(a,b,c)
+
+# st = input()
+
+# def stringLen(x):
+#       return len(x)
+# print(f'{stringLen(st)}글자')
+
+# a, b = map(int,input().split())
+
+# def ABC(x,y):
+#       return x+y,x*y
+
+# print(*ABC(a,b))
+
+## 문자 개수 세 주는 함수 만들기
+
+# def KFC():
+#       st = input()
+#       uc = 0
+#       lc = 0
+#       for i in st:
+#             if i.isupper():
+#                   uc += 1
+#             elif i.islower():
+#                   lc += 1
+#       return uc,lc
+
+# uppercase, lowercase = KFC()
+
+# print(f'대문자{uppercase}개\n소문자{lowercase}개')
+
+
+## 좋아하는 숫자 찾기
+
+# lst = [[4,5,6,1,3,1],[2,1,3,6,3,6]]
+
+# def Input():
+#       global num
+#       num = list(map(int,input().split()))
+#       return num
+
+# def Process(x):
+#       temp = []
+      
+#       for i in x:
+#             cot = 0
+#             for j in lst:
+#                   cot += j.count(i)
+#             temp.append(cot)
+#       return temp
+
+# def Output(x):
+#       print(f'{num[0]}={x[0]}개')
+#       print(f'{num[1]}={x[1]}개')
+#       print(f'{num[2]}={x[2]}개')
+
+# Output(Process(Input()))
+
+## 좌표값 찾아주는 함수 만들기
+
+# lst = [['A','D','F'],['Q','W','E'],['Z','X','C']]
+
+# def Find(x):
+#       i_idx = -1
+#       for i in lst:
+#             i_idx += 1
+#             for j in i:
+#                   if st in i:
+#                         j_idx = i.index(st)
+#                         return i_idx,j_idx
+                  
+
+# st = input()
+
+# print(f'{Find(st)[0]},{Find(st)[1]}')
+
+# lst = [3,5,1,2,7]
+
+# arr = list(map(int,input().split()))
+
+# def CompareGo(x,y):
+#       flag = x == y
+#       if flag:
+#             print('두배열은완전같음')
+#       else:
+#             print('두배열은같지않음')
+
+
+# CompareGo(lst,arr)
+
+T,M = list(map(int,input().split()))
+cook = int(input())
+Time = T * 60 + M + cook
+if Time >= 24*60 :
+      print(0,Time % 60)
+else :
+      print(f'{Time//60} {Time%60}')

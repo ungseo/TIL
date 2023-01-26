@@ -1122,10 +1122,747 @@
 
 # CompareGo(lst,arr)
 
-T,M = list(map(int,input().split()))
-cook = int(input())
-Time = T * 60 + M + cook
-if Time >= 24*60 :
-      print(0,Time % 60)
-else :
-      print(f'{Time//60} {Time%60}')
+# T,M = list(map(int,input().split()))
+# cook = int(input())
+# Time = T * 60 + M + cook
+# if Time >= 24*60 :
+#       print(0,Time % 60)
+# else :
+#       print(f'{Time//60} {Time%60}')
+
+
+
+## 너와 나의 거리 구하기
+
+# lst = input().split()
+# st1 = max(lst)
+# st2 = min(lst)
+# distance = [4,2,5,1,6,7,3]
+
+# idx1 = ord(st1) - 65
+# idx2 = ord(st2) - 65
+
+
+# result = sum(distance[idx2+1:idx1])
+
+# print(result)
+
+# A = list(map(int,input().split()))
+# B = list(map(int,input().split()))
+# C = list(map(int,input().split()))
+# new = []
+# for i in range(5):
+#       new.append(A[i]*B[i]+C[i])
+
+# print(*new)
+
+# lst = [[3,4,1,6],[3,5,3,6],[0,0,0,0],[5,4,6,0]]
+
+# arr = list(map(int,input().split()))
+# lst[2] = arr
+# Max = 0 
+# Min = 99999 
+# for i in lst:
+#       for j in i:
+#             if j >= Max :
+#                   Max = j
+#             elif j <= Min:
+#                   Min = j
+
+# break_point = False
+# for i in range(4):
+#       for j in range(4):
+#             if lst[i][j] == Max:
+#                   Mi = i
+#                   Mj = j
+#                   break_point = True
+#                   break
+#       if break_point == True:
+#             break
+
+# break_point = False
+# for i in range(4):
+#       for j in range(4):
+#             if lst[i][j] == Min:
+#                   mi = i
+#                   mj = j
+#                   break_point = True
+#                   break
+#       if break_point == True:
+#             break
+      
+            
+
+# print(f'MAX={Max}({Mi},{Mj})\nMIN={Min}({mi},{mj})')
+
+
+# def abc():
+#       print('#')
+#       for i in range(114):
+#             print('@')
+
+# a=3
+# b=3
+# a=7
+# a=78
+# b=2
+# abc()
+# a=64
+# b=12
+
+# lst = [['4','5','7','1','3','2'],['D','F','Q','W','G','Z']]
+
+# num = int(input())
+
+# num = str(num)
+
+# idx = lst[0].index(num)
+# print(lst[1][idx])
+
+# def FindABC(sen1,sen2):
+#       nA = sen1.count('A') + sen2.count('A')
+#       nB = sen1.count('B') + sen2.count('B')
+#       nC = sen1.count('C') + sen2.count('C')
+      
+#       return nA,nB,nC
+
+# def main():
+#       sent1 = input()
+#       sent2 = input()
+#       A,B,C = FindABC(sent1,sent2)
+
+#       print(f'A:{A}')
+#       print(f'B:{B}')
+#       print(f'C:{C}')
+
+# main()
+
+## 좌표를 지정하면 값 반환하기
+
+# lst = [['D','A','S'],['Q','W','V'],['R','T','Y']]
+
+
+
+# def Find(y,x,z,r):
+#       return lst[y][x], lst[z][r]
+
+# def main():
+#       y1,x1 = map(int,input().split())
+#       y2,x2 = map(int,input().split())
+
+#       print(*Find(y1,x1,y2,x2))
+
+# main()
+
+# person1 = input()
+# person2 = input()
+# person3 = input()
+
+# flag = person1 == person2 == person3
+
+# if flag:
+#       print('YES')
+# else :
+#       print('NO')
+
+
+# a, b = map(int,input().split())
+
+# while a <= b:
+#       print(a,end = ' ')
+#       a += 1
+
+
+# apartment = []
+
+# for i in range(5):
+#       F = list(map(int,input().split()))
+#       temp = []
+#       for j in F:
+#             temp.append(j)
+#       apartment.append(temp)
+
+
+# result = []
+# for i in range(5):
+#       hap = 0 
+#       for j in range(4):
+#             hap += apartment[i][j]
+#       result.append(hap)
+
+# print(*result)
+
+# lst = list(map(str,input().split()))
+# n = 0
+# for i in range(1):
+#       for j in range(5):
+#             print(*lst[n:])
+#             n += 1
+
+
+# waffle = []
+# for i in range(3):
+#       temp = list(map(int,input().split()))
+#       waffle.append(temp)
+# n = 0 
+# res = 0
+# for i in waffle:
+#       res += sum(i[:n+1]) 
+#       n += 1
+      
+
+# print(res)
+
+# vect =  [3,5,1,1,2,3,2]
+
+# lst = list(map(int,input().split()))
+
+# for i in lst:
+#       temp = vect.count(i)
+#       print(f'{i}={temp}개')
+
+# lst = list(map(int,input().split()))
+
+# lst.sort(reverse=True)
+
+
+# print(''.join(map(str,lst)))
+
+# sen = input()
+
+# new_sen = sorted(sen)
+
+# print(''.join(new_sen))
+
+# lst = [10,50,40,20,30,40]
+
+# arr = list(map(int,input().split()))
+# res = 0
+# for i in arr:
+#       temp = list(filter(lambda x:x>i,lst))
+#       print(f'{i}={len(temp)}개')
+
+# tri = int(input())
+
+# lst = []
+
+# for i in range(5):
+#       temp = list(map(int,input().split()))
+#       lst.append(temp)
+
+# if tri == 1:
+#       n = 0
+#       for i in lst:
+#             print(*i[:n+1])
+#             n += 1
+
+# elif tri == 2:
+#       n = 5
+#       for i in lst:
+#             print(*i[:n])
+#             n -= 1
+
+# num = int(input())
+# i = 0
+
+# while i < 3:
+#       j = 0
+#       while j < 5:
+#             print(num,end='')
+#             j += 1
+#       print()
+#       i += 1
+
+# a = input()
+# b = input()
+
+# sen1 = list(a)
+# sen2 = list(b)
+# sen1.sort()
+# sen2.sort()
+# dic_sen1 = ''.join(sen1)
+# dic_sen2 = ''.join(sen2)
+
+
+# print(dic_sen1+dic_sen2)
+
+# lst = [[0 for i in range(3)] for j in range(3)]
+
+# Magic(*lst)
+
+# Output(*lst)
+
+
+# def Magic(*arr_txt):
+#       num = 1
+#       for i in range(3):
+#             for j in range(3):
+#                   arr_txt[i][j]=num
+#                   num += 1 
+            
+
+# lst = list(input().split())
+# lst2 = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
+
+# for i in range(5):
+#     for j in range(5):
+#         lst2[i][j-i] = lst[j]  ##lst2[1][j-1] = lst[j]
+
+# for i in range(1, 5):
+#     for j in range(4-i+1, 4+1):
+#        lst2[i][j] = ''
+
+# for i in lst2:
+#     print(*i)
+
+
+# st = list(map(str,input().split()))
+
+# for i in range(5):
+#       for j in range(5):
+#             st[i][j-i]
+
+
+# lst = [[' ' for i in range(3)] for j in range(3)]
+
+
+# def Magic(arr):
+#       num = 1
+
+#       for i in range(3):
+#             for j in range(3):
+#                   if (i == 1 and j == 0) or (i == 2 and (j == 0 or j == 1)):
+#                         continue
+#                   else:
+#                         arr[i][j] = num
+#                         num += 1
+#       return arr
+
+# def Output(arr):
+#       for i in range(3):
+#             for j in range(3):
+#                   print(arr[i][j], end ='')
+#             print()
+
+# Output(Magic(lst))
+
+# sen1 = input()
+# sen2 = input()
+
+# if sen1 == sen2 :
+#       print('같음')
+# else :
+#       print('다름')
+
+
+# sen1 = input()
+# sen2 = input()
+# break_point = True
+# if len(sen1) == len(sen2):
+#       for i in range(len(sen1)):
+#             if sen1[i] == sen2[i]:
+#                   continue
+#             else:
+#                   print('다름')
+#                   break_point = False
+#                   break
+# else:
+#       print('다름')
+#       break_point = False
+
+# if break_point == True:
+#       print('같음')
+
+## 숫자 쪼개기
+
+
+'''## 찬석님 코드 mincoding 14- waffle 전문제
+lst = list(map(int,list(input())))
+
+print(lst)
+
+def main():
+    arr = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
+    result = Magic(arr)
+    Output(result)
+
+def Magic(arr):
+    num = 1
+    x = 0
+    for i in range(len(arr)):
+        for j in range(len(arr[i]) - x):
+            arr[i][j + x] = num
+            num += 1
+        x += 1
+    return arr
+
+def Output(x):
+    for i in range(len(x)):
+        for j in range(len(x[i])):
+            print(x[i][j], end = '')
+        print('')
+
+main()
+
+'''
+
+# lst = list(map(int,list(input())))
+
+# for i in range(len(lst)):
+#       print(f'숫자{lst[i]}')
+
+## 너와 나와의 거리
+
+# scores_list = list(map(int,input().split()))
+
+# temp = 0
+# for i in range(len(scores_list)-1):
+#       if abs(scores_list[i]-scores_list[i+1]) < 3:
+#             temp += 1
+#       else :
+#             print('재배치필요')
+#             break
+
+# if temp == len(scores_list)-1:
+#       print('완벽한배치')
+      
+# st1 = input()
+# st2 = input()
+
+# if st1[::-1] == st2:
+#       print('거울문장')
+# else:
+#       print('거울문장아님')
+      
+
+## 문장의 길이를 정렬하기
+
+## 문장의 길이를 정렬하기
+
+# lst = [[input()] for i in range(4)]        
+
+# len_list = []
+
+# for i in lst:
+#       len_list.append(len(i[0]))
+
+# len_list.sort()
+
+# print(*len_list)
+
+## 개구리문장 판별하기
+
+# sen = input()
+# temp1=str()
+# temp2=str()
+# for i in sen[::2]:
+#     temp1 += i
+# for i in sen[1::2]:
+#     temp2 += i
+
+# if temp1.isupper() and temp2.islower():
+#     print('개구리문장')
+# elif temp1.islower() and temp2.isupper():
+#     print('개구리문장')
+# else:
+#     print('일반문장')
+
+## 범죄자 찾아내기
+
+# lst = list('ABCZETQ')
+
+# black_list = list(input())
+
+# for i in black_list:
+#     if i in lst:
+#         print(f'{i}=마을사람')
+#     else:
+#         print(f'{i}=외부사람')
+
+## 다섯 문장 중 가장 긴 문장 찾기
+
+# lst = [[input()] for i in range(5)]
+
+
+# max_len = lst[0][0]
+# for i in range(5):
+#     if len(max_len) <= len(lst[i][0]):
+#         max_len = lst[i][0]
+    
+# print(max_len)
+
+# st1 = "BBQWORLD"
+# st2 = "KFCAPPLE"
+# st3 = "LOT"
+
+# st = input()
+# sum = 0
+# for i in [st1,st2,st3]:
+#     sum += i.count(st)
+
+# print(sum)
+
+# def main():
+#     a = list(input())
+#     b = list(input())
+#     c = list(input())
+#     CountLine(a,b,c)
+
+# def CountLine(x,y,z):
+#     for i in [x,y,z]:
+#         a= ''.join(i)
+#         print(f'{len(i)}={a}')
+
+# main()
+
+
+
+# a = input()
+# lst = [[a for i in range(4)] for j in range(4)]
+
+# print(lst)
+
+# lst = [[input()] for i in range(4)]
+
+# temp = []
+# for i in lst:
+#     temp.append(i[0])
+
+# sumstring = ''.join(temp)
+
+# if 'A' in sumstring and 'B' in sumstring:
+#     print('대발견')
+# elif 'A' in sumstring or 'B' in sumstring:
+#     print('중발견')
+# else:
+#     print('미발견')
+
+# lst = [[input()] for i in range(2)]
+
+# char = [] 
+# for i in lst :
+#     for j in range(len(i[0])):
+#         char.append(i[0][j])
+    
+# print(''.join(char))
+
+# lst = [list('DATAW'),list('BBQK')]
+
+# num = int(input())
+# if num % 2 == 1:
+#     lst[0].sort()
+# else:
+#     lst[1].sort()
+
+# fline = ''.join(lst[0])
+# sline = ''.join(lst[1])
+# print(f'{fline}\n{sline}')
+
+##
+
+# lst = [list('POTIO'),list('ABCDE'),list('YOURE')]
+
+# a, b = map(int,input().split())
+
+# for i in range(3):
+#     st = ''.join(lst[i][a:b+1])
+#     print(st,end ='')
+
+## 두 문장 중 같은 문장의 갯수 세기
+
+# lst = [[input()] for i in range(2)]
+
+# len_lst =[len(lst[0]),len(lst[1])]
+# max_len = max(len_lst)
+
+        
+
+
+# lst = [[' ' for i in range(8)] for j in range(2)]
+
+# diff = 0 
+
+# for i in range(2):
+#     st = list(input())
+#     for j in range(len(st)):
+#         lst[i][j] = st[j]
+
+
+# for j in range(8):
+#     if lst[0][j] != lst[1][j]:
+#         diff += 1
+
+# print(diff)
+
+## 이중 while로 배열에 값 채우기
+
+# st = input()
+# 
+
+# i = -1
+
+# x = 3
+# y = 0
+# while i < x:
+#     i += 1
+#     j = 2
+#     while j >= y:
+        
+#         lst[i][j] = st
+#         j -= 1
+#     y -= 1
+    
+    
+
+# print(lst)
+# lst = [[0 for i in range(3)] for j in range(3)]
+# st = input()
+# num = ord(st)
+# i = 3
+
+# x = 0
+# while i >= 1:
+#     j = 0
+#     i -= 1
+#     while j <= x:
+#         lst[i][j] = chr(num)
+#         j += 1
+#         num += 1
+#     x += 1
+
+# i = -1
+
+# while i < 2:
+#     i += 1
+#     j = 0
+#     while j <= 2:
+#         if lst[i][j] == 0 :
+#             print(' ',end ='')
+#             j += 1
+#         else:    
+#             print(lst[i][j],end = '')
+#             j += 1
+#     print()
+
+# print('HELLO WORLD')
+
+# lst = [[5,1,4,2,6],[3,5,0,0,7],[9,9,8,3,1]]
+
+# num = int(input())
+# res = 0
+# for i in lst:
+#     res += len(list(filter(lambda x:x>num,i)))
+
+# print(f'{res}개')
+
+# lst = [[0 for i in range(4)] for j in range(3)]
+
+# num = int(input())
+# n = 1
+# for i in range(2,-1,-1):
+#     for j in range(3,-1,-1):
+#         lst[i][j] = n
+#         n += 1
+
+
+# for j in range(4):
+#     if num == 1:
+#         lst[0][j] = 7
+#     elif num == 2:
+#         lst[1][j] = 7
+#     elif num == 3:
+#         lst[2][j] = 7
+    
+# for i in range(3):
+#     for j in range(4):
+#         print(lst[i][j],end = ' ')
+#     print()
+        
+
+## 그가 사는 그집
+
+# juso =[[402],[401],[302],[301],[202],[201],[102],[101]]
+# name = [['K','I','M'],['T','E','A'],['S','O','M'],['O','P','P','O'],['T','O','M'],['G','D','K'],['J','A','M','E'],['M','I','N']]
+
+# num = int(input())
+
+# ho = juso.index([num])
+# people = ''.join(name[ho])
+# print(people)
+
+# a,b,c = map(int,input().split())
+
+# for i in range(c):
+#     for j in range(b):
+#         print(a,end=' ')
+#         a += 1
+#     print()
+#     a -= b
+
+# lst = [0 for i in range(9)]
+# for i in range(3):
+#     start_index,end_inedx = map(int,input().split())
+    
+#     for idx in range(start_index,end_inedx+1):
+#         lst[idx] += 1
+
+# print(*lst)
+
+# lst = [list(map(int,input().split())) for i in range(2)]
+
+# arr = [0 for i in range(6)]
+# idx = 0
+# for i in range(2):
+#     for j in range(3):
+#         arr[idx] = lst[i][j]
+#         idx += 1
+
+# arr.sort()
+
+# idx = 0
+# for i in range(2):
+#     for j in range(3):
+#         lst[i][j] = arr[idx]
+#         print(lst[i][j],end = ' ')
+#         idx += 1
+#     print()
+
+
+## 선택한 칸 모두 출력하기
+
+# lst = [list('FRQWT'),list('GASYQ'),list('ASADB')]
+
+# num = int(input())
+
+# join = lst[0][num],lst[1][num],lst[2][num]
+
+# v_str = ''.join(join)
+# print(v_str)
+
+## 알파벳 퀴즈
+# correct = list('APPLET')
+
+# answer = input().split()
+
+# bingo = 0
+# for i in answer:
+#     bingo += correct.count(i)
+
+# print(f'{bingo}개 맞추었습니다')
+
+## 번호 순서대로 배열 채우기
+
+lst = [[0 for i in range(4)] for j in range(4)]
+num = int(input())
+x =range(4)
+y =range(3,-1,-1)
+for i in range(4):
+    for j in x:
+        lst[i][j] = num       
+        num += 1
+    x,y=y,x
+
+for i in range(4):
+    for j in range(4):
+        print(lst[i][j], end = ' ')
+    print()

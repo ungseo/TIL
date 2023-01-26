@@ -100,213 +100,240 @@
 # copy( 깊은복사 얕은복사)
 
 
-# '''
+# # '''
 
-st = 'apple,banana,mango'
+# st = 'apple,banana,mango'
 
-# ## 문자 'a'가  존재하는지 확인하고자 합니다.
+# # ## 문자 'a'가  존재하는지 확인하고자 합니다.
 
-index = st.find('a') ## 없으면 -1값 반환
-index = st.find('a',1) #>> 1번 인덱스부터 찾겠다.
-print(index) ## 0번 인덱스에 있음!
+# index = st.find('a') ## 없으면 -1값 반환
+# index = st.find('a',1) #>> 1번 인덱스부터 찾겠다.
+# print(index) ## 0번 인덱스에 있음!
 
-alpha = st.index('p')
-print(alpha) ## 없으면 버그남!!
+# alpha = st.index('p')
+# print(alpha) ## 없으면 버그남!!
 
-#대소문자 확인!!
-st = 'apple,banana,mango'
-print(st.isupper())  ## True or False 값 반환  >> False
-print(st.islower())  ##  >> True
-print(st.isalpha())  ## 다 알파벳이냐? >> False (,때문에)
+# #대소문자 확인!!
+# st = 'apple,banana,mango'
+# print(st.isupper())  ## True or False 값 반환  >> False
+# print(st.islower())  ##  >> True
+# print(st.isalpha())  ## 다 알파벳이냐? >> False (,때문에)
 
-print(st.count('a'))  ## a 5개있음. = int(5)
+# print(st.count('a'))  ## a 5개있음. = int(5)
 
-## join (합치기)
-st = ['a','p','p','l','e']
-str2 = "".join(st)  ## apple
-print(str2)
-##리스트 안에 문자를 합치는데 사이사이에 ,를 넣어라.
+# ## join (합치기)
+# st = ['a','p','p','l','e']
+# str2 = "".join(st)  ## apple
+# print(str2)
+# ##리스트 안에 문자를 합치는데 사이사이에 ,를 넣어라.
 
-str2 = ','.join(st)
+# str2 = ','.join(st)
 
-print(str2)
+# print(str2)
 
-st = ['apple','banana','mango']
+# st = ['apple','banana','mango']
 
-str3 =' '.join(st)
-print(str3)
+# str3 =' '.join(st)
+# print(str3)
 
-st = 'apple,banana,mango'
-## 모두 대문자/소문자로 바꾸기
+# st = 'apple,banana,mango'
+# ## 모두 대문자/소문자로 바꾸기
 
-str2 = st.upper()
-print(str2)
-str2 = st.lower()
-print(str2)
+# str2 = st.upper()
+# print(str2)
+# str2 = st.lower()
+# print(str2)
 
-## 공백지우기
-st ='  apple  '
-str2 = st.lstrip()    ## 왼쪽의 공백을 없앤다.//오른쪽은 rstrip//양쪽은 strip
-print(str2)
-str3 = st.strip() 
-print(str2)
-## 교체 replace
+# ## 공백지우기
+# st ='  apple  '
+# str2 = st.lstrip()    ## 왼쪽의 공백을 없앤다.//오른쪽은 rstrip//양쪽은 strip
+# print(str2)
+# str3 = st.strip() 
+# print(str2)
+# ## 교체 replace
 
-str2 = st.replace('ap','mp')
-print(str2)
+# str2 = st.replace('ap','mp')
+# print(str2)
 
-##리스트 값 추가
-st = ['apple', 'banana', 'mango']
-st.append('orange')
-st.insert(1,'orange') ## 리스트 값을 중간 또는 맨 앞에 추가할때 사용
-print(st)
-
-
-st = [1,2,3]
-str2 = [4,5]
-st.append(str2)
-print(st)
-
-st = [1,2,3]
-str2 = [4,5]    
-st.extend(str2)    ## st + str2 와 같음
-print(st)
+# ##리스트 값 추가
+# st = ['apple', 'banana', 'mango']
+# st.append('orange')
+# st.insert(1,'orange') ## 리스트 값을 중간 또는 맨 앞에 추가할때 사용
+# print(st)
 
 
-## ctrl + F2 일괄로 변수 바꾸기
+# st = [1,2,3]
+# str2 = [4,5]
+# st.append(str2)
+# print(st)
 
-## 리스트 값 지우기
-st = [1,2,3]
-
-st.pop()
-print(st)
-
-st = [1,2,3,4,1,2,3,4]
-st.remove(4)   #맨처음걸린거 하나만지움//없으면 오류뜸
-print(st)
-
-st = [1,2,3,4,1,2,3,4]
-
-del st[3:]
-print(st)
-
-st = [1,2,3,4,1,2,3,4]
-
-st.reverse()
-print(st)
-
-print(st[::-1])
-
-a1 = [6,3,9]
-print(a1)
-a1.sort()  ##오름차순 디폴트
-print(a1)
-a1.sort(reverse=True) ## 내림차순########################중요!~!~!~!!!!!!!!!!!
-print(a1)
-
-a2 = [6,3,9]    
-ret=sorted(a1)    ## 원본데이타를 바꾸지않고 바꾼상태의 데이타를 새로운 변수에 입력한다.
-print(a2,ret)
-ret = sorted(a2,reverse=True)
-print(ret)
-
-## lambda를 이용한 sort도 가능
-lst = list(range(10))
-print(lst)
-
-ret = sorted(lst,key = lambda x:x)
-print(ret)
-
-ret = sorted(lst,key=lambda x:x,reverse=True)  #내림차순!!!
-print(ret)
-
-lst = [(3,'banana'),(2,'apple'),(1,'carrot')]
-ret = sorted(lst,key = lambda x:x[0])
-
-print(ret)
-
-# 튜플 !!!!
-st ={'kevin':1, 'john':2,'bob':3}
-
-st['kate'] = 'hi'
-
-print(st)
-
-st['kevin'] = 11
-print(st)
-
-del st['kate']
-print(st)
-
-lst = st.keys()
-print(lst)
-print(list(lst))
-
-lst = st.values()
-print(list(lst))
-
-lst  = st.items()
-print(list(lst))   ## 튜플의 형태로 (key,value) 반환
-
-## 딕셔너리 값 출력하기
-st = {'kevin' :1, 'john' : 2, 'bob' :3}
-print(st.get('keein','값없음 없다구요~~!~!'))  ### value 값 뽑을때 get함수로 출력 추천
+# st = [1,2,3]
+# str2 = [4,5]    
+# st.extend(str2)    ## st + str2 와 같음
+# print(st)
 
 
-## 딕셔너리 값 정렬하기
-st = {'kevin':27, 'john': 22, 'bob' : 35}
+# ## ctrl + F2 일괄로 변수 바꾸기
 
-## 아이들의 나이가 적은 순으로 (오름차순으로)딕셔너리를 정렬하기!!
-## dict(딕셔너리 전용 함수) 사용
-ret=dict(sorted(st.items(),key=lambda x:x[1]))
+# ## 리스트 값 지우기
+# st = [1,2,3]
 
-print(ret)
+# st.pop()
+# print(st)
 
-##copy 
-lst=[1,2,3]
-lst2 = lst
-lst[0] = 100
-print(lst2)  ### [100,2,3]
+# st = [1,2,3,4,1,2,3,4]
+# st.remove(4)   #맨처음걸린거 하나만지움//없으면 오류뜸
+# print(st)
 
-## 그냥 변수할당과 카피의 차이
-lst= [1,2,3]
-# lst2=lst.copy()
-lst2 = lst[:]
+# st = [1,2,3,4,1,2,3,4]
 
-lst[0] = 100
-print(lst2)  ### [1,2,3]
+# del st[3:]
+# print(st)
+
+# st = [1,2,3,4,1,2,3,4]
+
+# st.reverse()
+# print(st)
+
+# print(st[::-1])
+
+# a1 = [6,3,9]
+# print(a1)
+# a1.sort()  ##오름차순 디폴트
+# print(a1)
+# a1.sort(reverse=True) ## 내림차순########################중요!~!~!~!!!!!!!!!!!
+# print(a1)
+
+# a2 = [6,3,9]    
+# ret=sorted(a1)    ## 원본데이타를 바꾸지않고 바꾼상태의 데이타를 새로운 변수에 입력한다.
+# print(a2,ret)
+# ret = sorted(a2,reverse=True)
+# print(ret)
+
+# ## lambda를 이용한 sort도 가능
+# lst = list(range(10))
+# print(lst)
+
+# ret = sorted(lst,key = lambda x:x)
+# print(ret)
+
+# ret = sorted(lst,key=lambda x:x,reverse=True)  #내림차순!!!
+# print(ret)
+
+# lst = [(3,'banana'),(2,'apple'),(1,'carrot')]
+# ret = sorted(lst,key = lambda x:x[0])
+
+# print(ret)
+
+# # 튜플 !!!!
+# st ={'kevin':1, 'john':2,'bob':3}
+
+# st['kate'] = 'hi'
+
+# print(st)
+
+# st['kevin'] = 11
+# print(st)
+
+# del st['kate']
+# print(st)
+
+# lst = st.keys()
+# print(lst)
+# print(list(lst))
+
+# lst = st.values()
+# print(list(lst))
+
+# lst  = st.items()
+# print(list(lst))   ## 튜플의 형태로 (key,value) 반환
+
+# ## 딕셔너리 값 출력하기
+# st = {'kevin' :1, 'john' : 2, 'bob' :3}
+# print(st.get('keein','값없음 없다구요~~!~!'))  ### value 값 뽑을때 get함수로 출력 추천
 
 
-## 2차원배열에서 문제가생김 (얕은복사)
-lst = [[1,2],[3,4]]
-lst2=lst.copy() 
-lst[0][0] = 100
-print(lst2[0][0])
+# ## 딕셔너리 값 정렬하기
+# st = {'kevin':27, 'john': 22, 'bob' : 35}
 
-## 깊은 복사
-import copy
-lst = [[1,2],[3,4]]
-lst2= copy.deepcopy(lst)
-lst[0][0]= 100
-print(lst2[0][0])
+# ## 아이들의 나이가 적은 순으로 (오름차순으로)딕셔너리를 정렬하기!!
+# ## dict(딕셔너리 전용 함수) 사용
+# ret=dict(sorted(st.items(),key=lambda x:x[1]))
 
-## 주소값을 찍어보자
-a = 5
-b = 5
-print(id(a),id(b)) ##같음
-lst = [1,2,3]
-lst2 =lst
-print(id(lst),id(lst2))## 같음
+# print(ret)
 
-lst= [1,2,3]
-lst2 =lst[:]
-print(id(lst),id(lst2))  ##다름
+# ##copy 
+# lst=[1,2,3]
+# lst2 = lst
+# lst[0] = 100
+# print(lst2)  ### [100,2,3]
 
-lst = [[1,2], [3,4]]
-lst2 = lst[:]
-print(id(lst[0]),id(lst2[0]))  ##같음
+# ## 그냥 변수할당과 카피의 차이
+# lst= [1,2,3]
+# # lst2=lst.copy()
+# lst2 = lst[:]
+
+# lst[0] = 100
+# print(lst2)  ### [1,2,3]
 
 
-lst = [[1,2], [3,4]]
-lst2 =copy.deepcopy(lst2)
-print(id(lst[0]),id(lst2[0]))
+# ## 2차원배열에서 문제가생김 (얕은복사)
+# lst = [[1,2],[3,4]]
+# lst2=lst.copy() 
+# lst[0][0] = 100
+# print(lst2[0][0])
+
+# ## 깊은 복사
+# import copy
+# lst = [[1,2],[3,4]]
+# lst2= copy.deepcopy(lst)
+# lst[0][0]= 100
+# print(lst2[0][0])
+
+# ## 주소값을 찍어보자
+# a = 5
+# b = 5
+# print(id(a),id(b)) ##같음
+# lst = [1,2,3]
+# lst2 =lst
+# print(id(lst),id(lst2))## 같음
+
+# lst= [1,2,3]
+# lst2 =lst[:]
+# print(id(lst),id(lst2))  ##다름
+
+# lst = [[1,2], [3,4]]
+# lst2 = lst[:]
+# print(id(lst[0]),id(lst2[0]))  ##같음
+
+
+# lst = [[1,2], [3,4]]
+# lst2 =copy.deepcopy(lst2)
+# print(id(lst[0]),id(lst2[0]))
+
+# st = 'banana'
+
+# flag = st == str
+# if flag==True:
+#     print('a')
+
+
+## 주어진 문자열에서 숫자,문자,기호가
+##  각각 몇개인지를 판단하는 함수를 작성해보세요.
+
+
+    
+
+
+# 문자 : 10개,숫자 : 3개, 기호 : 7개
+
+
+T,M = list(map(int,input().split()))
+cook = int(input())
+t, m = divmod(T * 60 + M + cook, 60)
+
+if t >= 24:
+    print(t-24, m)  
+else:
+    print(t,m)
+

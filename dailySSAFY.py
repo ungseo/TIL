@@ -305,9 +305,206 @@
 # B.    출력 예시 
 # [ ['eat', 'tea', 'ate'], ['tan', 'nat'], ['bat'] ] 
 
-print('a')
+# print('a')
+
+
+## 7-1 실습
+
+class Nationality():
+    
+    def __init__(self,name):
+        self.name = name
+    
+    def output(self):
+        return (f'나의 국적은 {self.name}')
+        
+
+
+korea_nationality = Nationality("대한민국")
+print(korea_nationality.output()) # 나의 국적은 대한민국
+
+
+## 7-3 실습
+
+# 1 + 2
+# 2 – 1
+# 3 * 4
+# 4 / 0
+
+
+class Calculator():
+    
+    def add(x,y):
+        return (f'{x} + {y} = {x + y}')
+    
+    def substract(x,y):
+        return (f'{x} - {y} = {x - y}')
+    
+    def multuply(x,y):
+        return (f'{x} * {y} = {x * y}')
+    
+    def divide(x,y):
+        
+        try:
+            return (f'{x} / {y} = {x / y}')
+        except(ZeroDivisionError):
+            return (f'0으로 나눌 수 없습니다.')
+
+print(Calculator.add(1,2))
+print(Calculator.substract(2,1))
+print(Calculator.multuply(3,4))
+print(Calculator.divide(4,0)) 
+
+import math
+
+
+def fee(minutes, distance):
+    ## 대여비 계산
+    lental_time = math.ceil(minutes/10) 
+    lental_charge = 1200
+    
+    lental_fee = lental_time * lental_charge
+    ## 보험료 계산
+    ins_charge = 525
+    ins_time, injury_time = divmod(minutes, 30)
+    if injury_time >=20:
+        ins_time += 1
+    
+    insurance_fee = ins_charge * ins_time
+    ## 주행요금 계산
+    dft_charge = 170
+    sale_charge = int(170 * (1/2))
+    
+    if distance > 100:
+        dis1, dis2  = 100, distance - 100
+        driving_fee = dis1 * dft_charge + dis2 * sale_charge
+    
+    else:
+        distance = distance
+        driving_fee = distance * dft_charge
+         
+    return (f'대여요금: {lental_fee}\n보험료: {insurance_fee}\n주행요금: {driving_fee}\n카쉐어링 서비스 요금:{lental_fee+insurance_fee+driving_fee}')
+
+print(fee(600, 110))
 
 
 
+## 7-5실습
+import random
+class ClassHelper():
+    
+    def __init__(self,name):
+        self.name = name
+        
+    def pick(self,num):
+        result = random.sample(self.name, k=num)
+        return result
+        
+    def match_pair(self):
+        
+        mate_list = []
+        lst = self.name[:]
+        
+        ran = len(lst)//2
+        random.shuffle(lst)
+        
+        for i in range(ran):
+            temp = []
+            
+            if len(lst) <= 3:
+                temp.append(lst)
+    
+            else:
+                for j in range(2):
+                    temp.append(lst.pop())
+            
+            mate_list.append(temp)        
+        return mate_list
 
+ch = ClassHelper(['김해피', '이해킹', '조민지', '박영수', '정민수'])
+
+
+print(ch.pick(1))
+print(ch.pick(1))
+print(ch.pick(2))
+print(ch.pick(3))
+print(ch.pick(4))
+
+print(ch.match_pair())
+
+
+## 7-6 과제
+
+class Doggy():
+    num_of_dogs = 0
+    birth_of_dogs = 0
+
+    def __init__(self,name,kind):
+        self.name = name
+        self.kind = kind
+        Doggy.num_of_dogs += 1
+        
+    def bark(self):
+        return (f'{self.name}: 왈!왈!')
+    
+    def death(self):
+        Doggy.num_of_dogs -= 1
+        del self
+        
+    def birth(self):
+        Doggy.birth_of_dogs += 1
+    
+    @classmethod
+    def get_status(cls):
+        print(f'강아지 수: {cls.num_of_dogs}')
+        print(f'새로태어난 강아지 수: {cls.birth_of_dogs}')
+        
+dog1 = Doggy('somi','Maltiz')
+dog2 = Doggy('dubu','Hound')
+dog3 = Doggy('jjongE','Jindotgae')
+
+dog4 = Doggy('jjangA','Maltiz')
+dog5 = Doggy('Hiii','Hound')
+
+dog4.birth()
+dog5.birth()
+
+
+print(dog1.bark())
+Doggy.get_status()
+
+## 7-7 과제
+
+
+def collatz(num):
+    
+    if num % 2 == 0:
+        count = 0
+        for i in range(500):
+            count += 1
+            num = num % 2
+            if num == 1:
+                break
+        if num != 1:
+            return -1
+        else:
+            return count
+        
+    elif num % 2 == 1:
+        num = num*3+1
+        count = 0
+        for i in range(500):
+            count += 1
+            num = num % 2
+            if num == 1:
+                break
+        if num != 1:
+            return -1
+        else:
+            return count
+
+print(collatz(6)) #=> 8
+# collatz(16) #=> 4
+# collatz(27) #=> 111
+# collatz(626331) #=> -1
 

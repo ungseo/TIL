@@ -328,12 +328,280 @@
 # 문자 : 10개,숫자 : 3개, 기호 : 7개
 
 
-T,M = list(map(int,input().split()))
-cook = int(input())
-t, m = divmod(T * 60 + M + cook, 60)
+# T,M = list(map(int,input().split()))
+# cook = int(input())
+# t, m = divmod(T * 60 + M + cook, 60)
 
-if t >= 24:
-    print(t-24, m)  
-else:
-    print(t,m)
+# if t >= 24:
+#     print(t-24, m)  
+# else:
+#     print(t,m)
 
+## 객체지향 <> 절차지향 프로그래밍
+
+class calculator():  ## 클래스
+    numberOfCalcul=0  ##속성  // 클래스 변수
+    
+    def __init__(self):  ## 매서드  ## init == 인스턴스 만들면 실행 ## 생성자함수 (constructor)
+        self.result= 0  ## 속성 // 인스턴스 변수
+        calculator.numberOfCalcul += 1
+        
+    def getsum(self,value): ## 매서드
+        self.result += value
+        return self.result
+    
+cal1 = calculator()   ## cal1 == 인스턴스 // 객체
+## 인스턴스 변수란?? 인스턴스가 개인적으로 가지고 있는 속성(attribute)
+
+
+
+
+print(cal1.getsum(3))
+print(cal1.getsum(4))
+print(cal1.getsum(5))
+
+# print(cal1.numberOfCalcul)
+
+print()
+
+cal2 = calculator()
+print(cal2.getsum(6))
+print(cal2.getsum(7))
+print(cal2.getsum(1))
+print(cal2.numberOfCalcul)
+# 클래스 변수란??
+# 한 클래스의 모든 인스턴스가 공유하는 값을 의미
+
+
+print(cal2.numberOfCalcul)
+
+# 주의점!!
+# 클래스 변수 값을 변경시 무조건 상상 클래스.클래스변수 형식으로 변경해야 함!!
+
+calculator.numberOfCalcul = 6 ## 인정
+
+print(cal1.numberOfCalcul)
+print(cal2.numberOfCalcul)
+
+
+print()
+print()
+
+## 안됨...
+cal1.numberOfCalcul = 10
+
+print(cal1.numberOfCalcul)  ## 10
+
+calculator.numberOfCalcul = 20
+print(cal1.numberOfCalcul)  ## 10
+print(cal2.numberOfCalcul)  ## 20
+
+'''
+결론
+클래스 변수 : 모든 인스턴스가 공유.
+인스턴스 전체가 사용해야 하는 값을 저장할 때 사용
+인스턴스변수 : 인스턴스별로 독립되어 있음.
+각 인스턴스가 값을 따로 지정해야 할 떄 사용
+'''
+
+#===========================================
+
+# 클래스 / 인스턴스(객체)
+# 클래스 - 속성/매서드
+# 속성- 클래스변수/ 인스턴스 변수
+
+# 3. 매서드
+#   1.인스턴스 매소드
+#   2.클래스 매소드
+#   3. 스태틱 매소드
+
+class plus_minus:
+    
+    # def data(self,first,second):  ## 인자값으로 객체 a, 3, 5를 각각 뜻한다
+    #     self.first=first
+    #     self.second=second
+    
+    def __init__(self,first,second):       
+        self.first = first
+        self.second = second
+        
+    def plus(self):  ##플러스값을 반환하는 매소드 완성
+        return self.first + self.second
+    
+    def minus(self):  ##마이너스 값을 반환하는 매소드완성
+        return self.first - self.second
+
+a = plus_minus(3,5)
+# a.data(3,5)
+
+b =plus_minus(2,7)
+# b.data(2,7)
+
+print(a.first,b.second)
+
+print(a.plus())
+
+print(a.minus())
+
+## __??__ 매직 메서드 (init add str 등) == 인스턴스 생성하자마자 자동 호출!!!
+
+'''
+특수한 매서드를 사용함으로써, 파이썬의 행위를 여러가지로 커스터마이즈를 할 수 있다. 
+파이썬 문자열에서 + 연산자를 사용하면 두 문자열이 합쳐 지는 것은 
+파이썬이라는 언어를 만들 때 문자열에 관한 클래스에 덧셈 연사이 되도록 클래스 안에 정의를 해 놓았기 떄문이다.
+'''
+
+# class car:
+#     def __init__(self,name,price):
+#         self.name = name
+#         self.price = price
+    
+#     def __add__(self,another):      ## __add__ 라는 매직매서드를 커스터마이징 해서 덧셈 연산을 지원하도록 하겠다.
+#         return self.price + another.price
+    
+#     def __str__(self):
+#         return (f'{self.name}의 가격은 {self.price}입니다.')
+# kia= car('k8',300)
+# bmw= car('m5',500)
+
+
+# # print(kia.price+bmw.price)를  ## 800
+# # print(kia+bmw) # 커스터마이징 할 것이다. ## 이거 지금 출력하면 버그남
+
+# ## magic 매서드 사용해서 커스터마이징
+
+# print(kia+bmw)
+
+# # print(f'{kia.name}의 가격은 {kia.price}입니다.')
+
+# print(kia)
+# print(bmw)
+
+# del kia
+
+# print(kia)
+
+'''
+데코레이터
+장식하는사람 이라는 뜻
+함수를 하나 만드는데 그 함수를 직접 수정하지 않고 함수에 기능을 추가하고자 할때 사용
+
+1.먼저 데코레이터 사용 안한 예
+
+이름과 나이를 출력해주는 각각의 함수를 정의해보자
+'''
+## 데코 사용 x
+
+# def call_name(name):
+#     print('반짝'*5)
+#     print(name)
+#     print('샤방'*5)
+
+# def call_age(age):
+#     print('반짝'*5)
+#     print(age)
+#     print('샤방'*5)
+
+# def call_nickname(nick):
+#     print(nick)
+    
+# call_name('최민호')
+# call_age(39)
+
+## 데코 사용
+
+# def deco(func):
+    
+#     def wrapping(value):      
+#         print('반짝'*5)
+#         func(value)
+#         print('샤방'*5)
+#     return wrapping
+
+# @deco
+# def call_name(name):
+#     print(name)
+
+# @deco
+# def call_age(age):
+#     print(age)
+    
+# call_name('최민호')
+# call_age(39)
+
+
+#========================================
+
+class car:
+    @staticmethod
+    def add_price(one,another):
+        print(one+another)
+        
+## 정적 메소드에서는 @staticmethod 를 붙입니다.
+## 그리고self가 없다!! (self는 인스턴스 메서드 사용)
+## add_price 함수의 매개변수를 넣는데 self 사용하지 않습니다.
+
+car.add_price(400,800)
+
+'''
+정적 메서드를 호출 할 떄는 클래스에서 바로 매서드를 호출하면 됩니다.
+클래스의 인스턴스가 없어도 문제 될 것 없음
+
+다시한번 말하지만 정적 매서드는 인스턴스 매서드 처럼 
+self를 받지 않습니다. 그래서 보통 정적메서드는 
+self와 같은 속성을 다루지 않고 단지 
+
+함수의 행동(기능)(메서드내용만) 하는 메서드를 클래스에 정의 할떄 사용한ㄷ.ㅏ
+그래서 호출할떄 클래스에서 바로 메서드를 호출함!!
+
+car.add_price(400,800)
+
+그러나 
+인스턴스가 있다면 인스턴스로도 static method에 접근은 가능
+이건 파이썬에서 가능!!
+
+인스턴스로 정적메소드 호출은 잘 하지 않음 그이유는!!!!
+정적 메서드를 사용하는 이유!!
+
+이 메서드는 클래스의 인스턴스에 어떠한 변화도 일으키지 않는
+함수라는 의미를 내포하고 암시할 때 사용한다. 
+'''
+
+a7 = car()
+
+a7.add_price(500,600)
+
+## 클래스 매서드
+
+## 몇명이 파이를 만들었는지 확인하는 코드를 클래스 매서드를 사용해보자
+
+class make_pie:
+    cnt = 0
+    def __init__(self,name):
+        self.name = name
+        make_pie.cnt += 1
+        
+    @classmethod
+    def number_Of_Pies(cls):
+        print(f'파이를 {cls.cnt} 명이 만들고 있습니다.')
+        
+    @classmethod
+    def create(cls,name):   ## 클래스 내부에서 클래스 안에 있는 메소드를 호출하는 함수
+        p = cls(name)
+        return p
+        
+        
+a = make_pie('kevin')
+b = make_pie('jane')
+c = make_pie('jhon')
+
+print(make_pie.cnt)
+
+make_pie.number_Of_Pies()
+
+make_pie.create('aiden')
+make_pie.create('bob')
+
+make_pie.number_Of_Pies()
+
+# print(

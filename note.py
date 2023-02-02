@@ -80,3 +80,43 @@ print(ch.pick(3))
 print(ch.pick(4))
 
 print(ch.match_pair())
+
+
+
+
+lst = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
+n = int(input())
+
+for i in range(4):
+    if i % 2 == 0:
+        for j in range(4):
+            lst[i][j] = n
+            n += 1
+    else:
+        for j in range(3, -1, -1):
+            lst[i][j] = n
+            n += 1
+
+for i in lst:
+    for j in i:
+        print(j, end=" ")
+    print()
+    
+    
+    
+    
+    
+lst = [[0 for i in range(4)] for j in range(4)]
+num = int(input())
+x =range(4)
+y =range(3,-1,-1)
+for i in range(4):
+    for j in x:
+        lst[i][j] = num       
+        num += 1
+    x,y=y,x
+
+for i in range(4):
+    for j in range(4):
+        print(lst[i][j], end = ' ')
+    print()

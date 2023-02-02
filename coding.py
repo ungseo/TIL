@@ -1852,17 +1852,230 @@ main()
 
 ## 번호 순서대로 배열 채우기
 
-lst = [[0 for i in range(4)] for j in range(4)]
-num = int(input())
-x =range(4)
-y =range(3,-1,-1)
-for i in range(4):
-    for j in x:
-        lst[i][j] = num       
-        num += 1
-    x,y=y,x
+# lst = [[0 for i in range(4)] for j in range(4)]
+# num = int(input())
+# x =range(4)
+# y =range(3,-1,-1)
+# for i in range(4):
+#     for j in x:
+#         lst[i][j] = num       
+#         num += 1
+#     x,y=y,x
 
-for i in range(4):
-    for j in range(4):
-        print(lst[i][j], end = ' ')
-    print()
+# for i in range(4):
+#     for j in range(4):
+#         print(lst[i][j], end = ' ')
+#     print()
+
+## 꼬리찾기
+# lst = []
+# for i in range(3):
+#     temp = list(input())
+#     lst.append(temp)
+    
+# for i in lst:
+#     print(i[-1], end ='')
+
+
+## 내가 좋아하는 문자의 수
+
+# lst = [['A','B','K','T'],['K','F','C','F'],['B','B','Q','Q'],['T','P','Z','F']]
+# st1, st2 = map(str,input().split())
+
+# st_lst = ''.join([''.join(i) for i in lst])
+
+# cnt = 0 
+
+# cnt += st_lst.count(st1)
+# cnt += st_lst.count(st2)
+
+# print(cnt)
+
+## 문장 A 추가하기
+
+# st = list(input())
+# num = int(input())
+
+# st.insert(num,'A')
+
+# print(''.join(st))
+
+## 두 개의 배열의 누적의 합
+
+# A = list(map(int,input().split()))
+# B = list(map(int,input().split()))
+
+# result = []
+# for i in range(1,5):
+#     result.append(A[i-1] + B[-i])
+#     print(result[i-1], end = ' ')
+
+## 잡초문자 제거하기
+
+# st = list(input())
+# idx = int(input())
+
+# st.remove(st[idx])
+
+# print(''.join(st))
+
+## 배열의 누적합 구하기
+
+# lst = list(map(int,input().split()))
+
+# for i in range(len(lst)-1):
+#     hap = lst[i]+lst[i+1]
+#     lst[i+1] = hap
+    
+# print(*lst)
+    
+## M이 존재합니까?
+
+# no_cnt = 0
+# for i in range(3):
+#     st = input()
+#     flag = 'M' in st
+#     if flag:
+#         print('M이 존재합니다')
+#         break
+#     else:
+#         no_cnt += 1
+#
+# if no_cnt == 3:
+#     print('M이 존재하지 않습니다')
+
+# a, b, c = map(int,input().split())
+#
+# for i in range(c):
+#     for j in range(a, b+1):
+#         print(j, end=' ')
+#     print()
+
+
+# arr = [4,7,3,1,2]
+# lst = []
+
+# for i in range(5):
+#     lst.append(arr[i])
+#     for j in range(i):
+#         if lst[i] < lst[j]:
+#             lst[i],lst[j] = lst[j],lst[i]
+
+# print(lst)
+
+# lst = [[0 for i in range(3)] for j in range(6)]
+# st_num = 65
+# for j in range(2,-1,-1):
+#     for i in range(5,-1,-1):
+#         lst[i][j] = chr(st_num)
+#         st_num += 1
+
+# i, j = map(int,input().split())
+
+# print(lst[i][j])
+
+
+## 함수에 주소 넘기기 복습!
+
+# lst = [[0 for i in range(3)] for j in range(2)]
+# arr = list(map(int,input().split()))
+# idx = 0
+# for i in range(2):
+#     for j in range(3):
+#         lst[i][j] = arr[idx]
+#         idx += 1
+
+# def maxV(arr):
+#     maxv = arr[0]
+#     for i in range(len(arr)):
+#         if maxv < arr[i]:
+#             maxv = arr[i]
+#         return maxv
+    
+# def minV(arr):
+#     minv = arr[0]
+#     for i in arr:
+#         if minv > i:
+#             minv = i
+#         return minv
+
+# for i in range(2):
+#     for j in range(3):
+#         if lst[i][j] == maxV(arr):
+#             MaxV = (i,j)
+            
+#         elif lst[i][j] == minV(arr):
+#             MinV = (i,j)
+            
+# print(MaxV)
+# print(MinV)
+
+
+# lst= [[4, 5, 2, 6, 7],
+#       [2, 9, 9, 6, 1],
+#       [2, 9, 9, 6, 1]]
+
+# def isin(x):
+#     cnt = 0
+#     for i in lst:
+#         if x in i:
+#             cnt += 1
+#     if cnt > 0 :
+#         print('Y',end =' ')
+#     else:
+#         print('N',end =' ')
+
+
+
+# for i in range(2):
+#     a, b = map(int,input().split())
+#     isin(a)
+#     isin(b)
+#     print()
+
+'''이차원 배열에 패턴이 몇개 존재 하는지 출력하기
+
+AB
+TT
+발견2개
+'''
+board = [
+    ['A','B','G','K'],
+    ['T','T','A','B'],
+    ['A','C','T','T']]
+
+st = [list(input()) for i in range(2)]
+# print(st)
+# def check(x,y):
+#     if board[x][y:y+2] == st[0]:
+#         return 1
+#     else:
+#         return 0
+    
+
+# cnt = 0
+# for i in range(3):
+#     for j in range(3):
+#         cnt += check(i,j)
+        
+# if cnt > 0 :
+#     print(f'발견{cnt}개')
+# else:
+#     print(f'미발견')
+def findptn(by,bx):
+    for dy in range(2):
+        for dx in range(2):
+            if board[by+dy][bx+dx]!=st[dy][dx]:
+                return 0
+    return 1
+            
+cnt = 0 
+for i in range(2):
+    for j in range(3):
+        if findptn(i,j):
+            cnt += 1 
+
+if cnt:
+    print(f'발견 {cnt}개')
+else:
+    print('미발견')

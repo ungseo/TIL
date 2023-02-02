@@ -567,41 +567,335 @@ car.add_price(400,800)
 함수라는 의미를 내포하고 암시할 때 사용한다. 
 '''
 
-a7 = car()
+# a7 = car()
 
-a7.add_price(500,600)
+# a7.add_price(500,600)
 
-## 클래스 매서드
+# ## 클래스 매서드
 
-## 몇명이 파이를 만들었는지 확인하는 코드를 클래스 매서드를 사용해보자
+# ## 몇명이 파이를 만들었는지 확인하는 코드를 클래스 매서드를 사용해보자
 
-class make_pie:
-    cnt = 0
-    def __init__(self,name):
-        self.name = name
-        make_pie.cnt += 1
+# class make_pie:
+#     cnt = 0
+#     def __init__(self,name):
+#         self.name = name
+#         make_pie.cnt += 1
         
-    @classmethod
-    def number_Of_Pies(cls):
-        print(f'파이를 {cls.cnt} 명이 만들고 있습니다.')
+#     @classmethod
+#     def number_Of_Pies(cls):
+#         print(f'파이를 {cls.cnt} 명이 만들고 있습니다.')
         
-    @classmethod
-    def create(cls,name):   ## 클래스 내부에서 클래스 안에 있는 메소드를 호출하는 함수
-        p = cls(name)
-        return p
+#     @classmethod
+#     def create(cls,name):   ## 클래스 내부에서 클래스 안에 있는 메소드를 호출하는 함수
+#         p = cls(name)
+#         return p
         
         
-a = make_pie('kevin')
-b = make_pie('jane')
-c = make_pie('jhon')
+# a = make_pie('kevin')
+# b = make_pie('jane')
+# c = make_pie('jhon')
 
-print(make_pie.cnt)
+# print(make_pie.cnt)
 
-make_pie.number_Of_Pies()
+# make_pie.number_Of_Pies()
 
-make_pie.create('aiden')
-make_pie.create('bob')
+# make_pie.create('aiden')
+# make_pie.create('bob')
 
-make_pie.number_Of_Pies()
+# make_pie.number_Of_Pies()
 
-# print(
+# # print(
+# def emoji_decorator(func):
+#     def wrapper(name):
+#         func(name)
+#         print("^~^//")
+#     return wrapper
+
+# def add_tears(func):
+#     def wrapper(name):
+#         func(name)
+#         print('ㅠ,.ㅠ')
+#     return wrapper
+
+
+
+# @add_tears
+# @emoji_decorator    
+# def ko_hello(name):
+#     print(f'안녕하세요, {name}님!')
+# @add_tears
+# @emoji_decorator    
+# def en_hello(name):
+#     print(f'Hello, {name}!')
+
+
+
+
+  
+    
+
+    
+# en_hello('ungseo')
+
+
+# class MyClass:
+    
+#     def method(self):
+#         return 'instance method', self
+    
+#     @classmethod
+#     def classmethod(cls):
+#         return 'class method', cls
+    
+#     @staticmethod
+#     def staticmethod():
+#         return 'static method'
+    
+# my_class = MyClass()
+
+# print(my_class.method())
+# print(my_class.classmethod())
+# print(my_class.staticmethod())
+
+
+# class Person():
+#     def __init__(self,name):
+#         self.name =name
+        
+#     def greeting(self):
+#         return f'안녕, {self.name}'
+    
+# class Mom(Person):
+#     gene = 'XX'
+    
+#     def swim(self):
+#         return '엄마가 수영'
+
+# class Dad(Person):
+#     gene = 'XY'
+    
+#     def walk(self):
+#         return '아빠가 걷기'
+    
+# class FirstChild(Dad,Mom):
+#     def swim(self):
+#         return '첫째가 수영'
+    
+#     def cry(self):
+#         return '첫쨰가 응애'
+    
+    
+# baby1 = FirstChild('아가')
+# print(baby1.cry())
+# print(baby1.swim())
+# print(baby1.walk())
+# print(baby1.gene) 
+
+# class Person():
+#     def __init__(self):
+#         self._age = 0
+#     @property    
+#     def age(self):     ##getter
+        
+#         print('게터 호출')
+#         return self._age
+#     @age.setter
+#     def age(self,age):  ## setter
+#         print('세터 호출')
+#         self._age = age
+
+    
+  
+# # ///
+
+# p1  = Person()
+
+# p1.age = 25 
+# print(p1.age)
+
+class plus_minus:
+    def __init__(self,first,second):
+        self.first = first
+        self.second = second
+        
+    def plus(self):
+        result = self.first+self.second
+        return result
+
+    def minus(self):
+        result = self.first-self.second
+        return result
+    
+a = plus_minus(3,5)
+
+class morefunction(plus_minus):
+    def __init__(self, first, second, third):
+        super().__init__(first, second)  ## super는 부모클래스의 init 메소드를 그대로 가져온 것
+        self.third = third              ## third만 추가
+
+    def mul(self):
+        result = self.first * self.second*self.third
+        return result
+
+        
+# a = plus_minus(3,5)
+# print(a.first,a.second)
+# a = morefunction(4)
+
+# pirnt(a.third)
+# print(a.mul())
+
+# a = morefunction(3,4,5)
+# print(a.mul())
+# print(a.plus())
+
+# 메서드 오버라이딩
+# 오버라이딩이란 덮어쓰기를 말한다.
+#부모클래스에 있는 메서드!!! 를 동일한 이름으로 자식클래스에서 다시 만드는 것이다.
+#(부모 클래스의 메서드 이름과 기본 기능은 그대로 사용하지만, 특정 기능을 바꾸고 싶을 떄 사용)
+
+## 부모 클래스에서 상속받은 plus의 메소드의 기능에서
+## 숫자 2개가 아닌 숫자 3개의 합이 100이 넘는다면
+## '버그'라고 출력이 되도록
+## 자식클래스에서 plus의 메소드 업그레이드가 되도록 가정하자.
+
+class plus_minus:
+    def __init__(self,first,second):
+        self.first = first
+        self.second = second
+        
+    def plus(self):
+        result = self.first+self.second
+        return result
+
+    def minus(self):
+        result = self.first-self.second
+        return result
+    
+
+
+class morefunction(plus_minus):
+    def __init__(self, first, second, third):
+        super().__init__(first, second)  ## super는 부모클래스의 init 메소드를 그대로 가져온 것
+        self.third = third              ## third만 추가
+
+    def mul(self):
+        result = self.first * self.second*self.third
+        return result
+    
+    def plus(self):
+        get_sum = self.first+self.second+self.third
+        
+        if get_sum>100:
+            print('버그')
+        else:
+            return print(get_sum)
+        
+    def parents_plus(self):
+        ret = super().plus()
+        return ret
+        
+a = morefunction(1,1,99)
+a.plus()
+t = morefunction(500,400,200)
+print(t.parents_plus())
+print(morefunction.mro())
+
+## 이처럼 부모클래스의 plus 메서드를
+## 새롭게 다시 정의하는 것을 '메서드 오버라이딩'이라고 한다.
+## 이번에는 자식클래스에서 plus 메서드를 다시 정의 했지만 (메서드 오버라이딩을 했지만)
+
+## 부모 클래스에서의 plus 메서드를 자식클래스에서도 또 사용하고 싶다면???
+## 이때 super()를 이용할 수 있다. 
+
+class Person():
+    def __init__(self,name,age):
+        self.name=name
+        self.__age=age  ## 언더스코어 2개를 붙여
+        
+    def getter(self):
+        return self.__age
+    
+    def setter(self,value):
+        self.__age=value
+
+k =Person('kevin', 39)
+
+print(k.getter())
+k.setter(29)
+print(k.getter())
+
+## 클래스의 private한 속성값을 getter와 setter를 이용해서 확인 그리고 값 변경이 가능ㅎㅁ
+## 그 다음에는 위 코드를 좀더 간단하게 적기 위해 데코레이터를 사용할 것이다.
+
+## getter 메소드에는 @property 라는  데코레이터를 사용하고
+## setter 메소드에는 @변수.setter 로 데코레이터를 사용할 것이다.
+
+
+class Person():
+    def __init__(self,name,age):
+        self.name=name
+        self.__age=age  ## 언더스코어 2개를 붙여
+    
+    @property    
+    def age(self):
+        return self.__age
+    
+    @age.setter
+    def age(self,value):
+        self.__age=value
+        
+
+k = Person('kevin',39)
+
+print(k.age)
+k.age = 29
+print(k.age)
+
+
+## 참고로 @property 데코레이터 사용을 하면 메서드 호출시 ()를 생략해야 한다.
+## 관례상 setter getter 함수명은 변수명을 따른다.
+from collections import Counter
+
+
+lst = ['apple','mango','banana','mango','apple','mango','banana','mango','apple']
+
+# counter 는 리스트 안에 중복된 데이터가 각각 몇개씩 있는지 알려준다.
+
+print(Counter(lst))
+
+ret = dict(Counter(lst))
+
+print(ret)
+
+st = 'an apple mangop'
+
+ret = dict(Counter(st))
+print(ret)
+
+ret = sorted(ret.items(),key = lambda x:x[1],reverse=True)
+
+print(ret)
+print(ret[0])
+print()
+st = 'an apple mangop'
+## st요소를 세어 , 최빈값 n개를 반환한다. 
+ret = Counter(st).most_common(1)
+print(ret)
+
+## 추가적으로 Counter를 가지고 덧셈 뺄셈도 지원합니다. 
+
+a = Counter('apple')
+b = Counter('mango')
+print(a)
+print()
+print(b)
+print()
+print(a+b)
+print()
+print(a-b)
+
+a.subtract(b)
+
+print()
+print(a)

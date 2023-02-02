@@ -508,3 +508,114 @@ print(collatz(6)) #=> 8
 # collatz(27) #=> 111
 # collatz(626331) #=> -1
 
+## 8-1 실습
+# from collections import Counter
+# participants =  [3, 7, 100, 21, 13, 6, 5, 7, 5, 6, 3, 13, 21]
+# vs = Counter(participants)
+# kkakddugi = sorted(vs.items(),key= lambda x: x[1])
+
+# print(kkakddugi[0][0])
+
+
+##Driver's code
+
+from datetime import datetime
+
+class Person():
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+    
+    def get_age(name,age):
+        
+        age = datetime.today().year - age - 1
+        return Person(name, age)
+    
+    def check_age(self):
+        if self.age >= 19:
+            return True
+        else:
+            return False
+
+
+person1 = Person('Mark', 20)
+person2 = Person.get_age('Rohan', 1992)
+
+print(person1.name, person1.age) 
+print(person2.name, person2.age)
+print(person1.check_age())
+print(person2.check_age())
+
+## 8-3 예제
+
+class PublicTransport():
+    total_passenger = 0
+    passenger = 0 
+    
+    
+    
+    def __init__(self,name,fare):
+        self.name = name
+        self.fare = fare
+        
+    def get_in(self):
+        self.passenger += 1
+        PublicTransport.total_passenger += 1
+        
+    def get_off(self):
+        self.passenger -= 1 
+    
+    def profit(self):
+        return PublicTransport.total_passenger * self.fare
+
+tp1 = PublicTransport('bus',1250)
+tp2 = PublicTransport('taxi',3750)
+tp1.get_in()
+
+
+
+print(tp1.passenger,PublicTransport.total_passenger)
+print(tp2.passenger,PublicTransport.total_passenger)
+
+tp1.profit()
+
+
+
+class PublicTransport():
+    total_passenger = 0
+    passenger = 0
+    
+    fare = 1250
+    
+    def __init__(self,name):
+        self.name = name
+
+        PublicTransport.total_passenger += 1
+        
+    def get_in(self):
+        PublicTransport.passenger += 1
+        
+    def get_off(self):
+        PublicTransport.passenger -= 1 
+    
+    @classmethod
+    def profit(cls):
+        return PublicTransport.total_passenger * PublicTransport.fare
+
+psg1 = PublicTransport('kebin')
+psg2 = PublicTransport('ungseo')
+psg3 = PublicTransport('kwang')
+psg4 = PublicTransport('shift')
+psg5 = PublicTransport('ctrl')
+
+psg1.get_in()
+psg2.get_in()
+psg3.get_in()
+psg4.get_in()
+psg5.get_in()
+
+psg4.get_off()
+psg3.get_off()
+
+print(PublicTransport.passenger)
+print(PublicTransport.profit())

@@ -2039,12 +2039,12 @@ AB
 TT
 발견2개
 '''
-board = [
-    ['A','B','G','K'],
-    ['T','T','A','B'],
-    ['A','C','T','T']]
+# board = [
+#     ['A','B','G','K'],
+#     ['T','T','A','B'],
+#     ['A','C','T','T']]
 
-st = [list(input()) for i in range(2)]
+# st = [list(input()) for i in range(2)]
 # print(st)
 # def check(x,y):
 #     if board[x][y:y+2] == st[0]:
@@ -2062,20 +2062,374 @@ st = [list(input()) for i in range(2)]
 #     print(f'발견{cnt}개')
 # else:
 #     print(f'미발견')
-def findptn(by,bx):
-    for dy in range(2):
-        for dx in range(2):
-            if board[by+dy][bx+dx]!=st[dy][dx]:
-                return 0
-    return 1
+# def findptn(by,bx):
+#     for dy in range(2):
+#         for dx in range(2):
+#             if board[by+dy][bx+dx]!=st[dy][dx]:
+#                 return 0
+#     return 1
             
-cnt = 0 
-for i in range(2):
-    for j in range(3):
-        if findptn(i,j):
-            cnt += 1 
+# cnt = 0 
+# for i in range(2):
+#     for j in range(3):
+#         if findptn(i,j):
+#             cnt += 1 
 
-if cnt:
-    print(f'발견 {cnt}개')
-else:
-    print('미발견')
+# if cnt:
+#     print(f'발견 {cnt}개')
+# else:
+#     print('미발견')
+
+## 성실한 직원 찾기
+
+# bucket = [0 for i in range(65535)]
+
+# arr = [[65000,35,42,70],[70,35,65000,1300],[65000,30000,38,42]]
+
+# for i in range(3):
+#     for j in range(4):
+#         bucket[arr[i][j]] += 1
+
+# maxV = bucket[0]           ## 제일 큰 번호 찾기
+# for i in range(65535):
+#     if maxV < bucket[i]:
+#         maxV = bucket[i]
+        
+        
+# for i in range(65535):     ## 제일 큰 번호 인덱스 찾고 프린트
+#     if bucket[i] == maxV:
+#         print(i)
+#         break
+
+## 안나오는 숫자는?
+
+# lst  = [list(map(int,input().split())) for i in range(3)]
+
+# bucket = [0 for i in range(10)]
+
+# def check(x,y):
+#     bucket[lst[x][y]] += 1
+    
+# for i in range(3):
+#     for j in range(3):
+#         check(i,j)
+        
+
+# for i in range(1,10):
+#     if bucket[i] == 0 :
+#         print(i, end=' ')
+
+# lst = [[1,3,3,5,1],
+#        [3,6,2,4,2],
+#        [1,9,2,6,5]]
+
+# N = int(input())
+
+# bucket = [0 for i in range(10)]
+
+
+# def check(x,y):
+#     bucket[lst[x][y]] += 1
+    
+# for i in range(3):
+#     for j in range(5):
+#         check(i,j)
+
+# for i in range(10):
+#     if bucket[i] == N:
+#         print(i,end=' ')
+
+## 카드 종류 알아내기
+
+# cardlist = list(input())
+
+# DAT = [0 for i in range(26)]
+
+# for i in range(len(cardlist)):
+#     DAT[ord(cardlist[i])-65] += 1
+
+# cnt = 0 
+# for i in range(26):
+#     if DAT[i] > 0:
+#         cnt += 1
+
+# print(f'{cnt}개')
+
+## 인기 많은 알파벳
+
+# st = list(input())
+
+# DAT = [0 for i in range(26)]
+
+# for i in st:
+#     DAT[ord(i)-65] += 1
+
+# maxV = 0    
+# for i in DAT:
+#     if maxV < i:
+#         maxV = i
+
+# for i in range(26):
+#     if DAT[i] == maxV:
+#         print(chr(i+65))
+        
+## 블랙리스트
+
+# town = [['C','D','A'],
+#         ['B','M','Z'],
+#         ['Q','P','O']]
+
+# black = list(input())
+
+# cnt = 0
+# for i in black:
+#     for j in town:
+#         if i in j:
+#             cnt += 1
+#             break
+
+# print(f'{cnt}명')
+
+## 한줄로 알파벳 정렬하기
+
+# lst = [['A','B','C'],
+#        ['A','G','H'],
+#        ['H','I','J'],
+#        ['K','A','B'],
+#        ['A','B','C']]
+
+# DAT = [0 for i in range(26)]
+
+# for i in range(5):
+#     for j in range(3):
+#         DAT[ord(lst[i][j])-65] += 1
+        
+# alst = []
+# for i in range(26):
+#     if DAT[i] != 0:
+#         alst.append(chr(65+i)*DAT[i])
+    
+# print(''.join(alst))
+
+## 기차에서 우리팀 찾기
+
+# train = [3,7,6,4,2,9,1,7]
+# team = list(map(int,input().split()))
+# for i in range(6):
+#     if train[i:i+3] == team:
+#         print(f'{i}번~{i+2}번 칸')
+
+## 몇층에 있으세요?
+
+# apt = [[15,18,17],
+#        [4,6,9],
+#        [10,1,3],
+#        [7,8,9],
+#        [15,2,6]]
+
+# family = list(map(int,input().split()))
+
+# def isPattern(num):
+#     if family == apt[num]:
+#         return 1
+#     else:
+#         return 0
+    
+# for i in range(5):
+#     if isPattern(i):
+#         print(f'{5-i}층')
+
+## 가족을 찾아라
+
+# lst = [['G','K','G'],input().split()]
+
+# DAT = [0 for i in range(26)]
+
+# for i in range(2):
+#     for j in range(3):
+#         DAT[ord(lst[i][j])-65] += 1
+
+# cnt = 0
+# for i in range(26):
+#     if DAT[i] >= 3:
+#         cnt += 1
+    
+# if cnt >= 1:
+#     print('있음')
+# else:
+#     print('없음')
+
+## 도플갱어
+
+# lst = list(map(int,input().split()))
+
+# maxV = 0
+# for i in range(len(lst)):
+#     if maxV < lst[i]:
+#         maxV = lst[i]
+        
+# DAT = [0 for i in range(maxV+1)]
+
+# for i in range(len(lst)):
+#     DAT[lst[i]] += 1
+
+# for i in DAT:
+#     if i > 1:
+#         print('도플갱어 발견')
+#         break
+# else:
+#     print('미발견')
+
+## 알파벳 카운팅
+
+# st = input()
+# lst = list(st)
+
+# DAT = [0 for i in range(26)]
+
+# for i in range(len(lst)):
+#     DAT[ord(lst[i])-65] += 1
+
+# maxV = DAT[0]
+# for i in range(26):
+#     if DAT[i] > maxV:
+#         maxV = DAT[i]
+
+# for i in range(26):
+#     if DAT[i] == maxV:
+#         print(chr(i+65))
+    
+
+## 하마의 충치
+
+# teeth = [list(map(int,input().split())) for i in range(2)]
+# cnt = 0
+
+# for i in range(len(teeth[0])):
+#     if teeth[0][i] == 1:
+#         if teeth[1][i] == 1:
+#             cnt += 1
+
+# print(f'{cnt}개')
+
+## 양쪽에서 아이찾기
+
+# lst = list('ATKPTCABC')
+
+# a, b = input().split()
+
+# def lcheck(idx):
+#     for i in range(len(lst)):
+#         if lst[i] == idx:
+#             return i
+        
+# def rcheck(idx):
+#     for i in range(len(lst)-1,-1,-1):
+#         if lst[i] == idx:
+#             return i
+        
+# print(rcheck(b)- lcheck(a))
+        
+
+## 사법고시 합격자 발표
+
+# win = [[3,5,1],
+#        [4,2,1]]
+
+# people = list(map(int,input().split()))
+
+
+# for i in people:
+#     cnt = 0
+#     for j in win:
+#         if i in j:
+#             cnt += 1
+#     if cnt > 0:
+#         print(f'{i}번 합격')
+#     else:
+#         print(f'{i}번 불합격')
+        
+        
+## 민코딩 찾기
+
+# vect = list('MINCODING')
+
+# n = int(input())
+# st = list(input().split())
+# DAT = [0 for i in range(26)]
+
+# for i in vect:
+#     DAT[ord(i)-65] += 1
+    
+# for i in range(n):
+#     if DAT[ord(st[i])-65] > 0:
+#         print('O',end='')
+#     else:
+#         print('X',end='')
+
+## 다른 문장 입력 하기
+
+# lst = [list(input()) for i in range(3)]
+
+# DAT = [0 for i in range(26)]
+
+# def check(str):
+#     DAT[ord(str)-65] += 1
+    
+    
+# for i in lst:
+#     for j in range(len(i)):
+#         check(i[j])
+
+# for i in DAT:
+#     if i > 1:
+#         print('No')
+#         break
+# else:
+#     print('Perfect')
+
+## 중복 제거하기
+
+# st = input()
+# DAT = [0 for i in range(6)]
+
+# for i in st:
+#     DAT[ord(i)-65] += 1
+
+# for i in range(6):
+#     if DAT[i] >= 1:
+#         print(chr(i+65),end='')
+
+## 각 글자수 세기
+
+# st = list(input())
+# DAT = [0 for i in range(26)]
+
+# for i in st:
+#     DAT[ord(i)-65] += 1
+
+# for i in range(26):
+#     if DAT[i] != 0:
+#         print(f'{chr(i+65)}:{DAT[i]}')
+        
+## 유령은 존재 할까?
+
+# st = input()
+
+# if 'GHOST' in st:
+#     print('존재')
+# else:
+#     print('존재하지 않음')
+
+st = list(input())
+
+for i in range(len(st)):
+    idx = i
+    if st[idx] == 'G':
+        idx += 1
+        if st[idx] == 'H':
+            idx += 1
+            if st[idx] == 'O':
+                idx += 1
+                if st[idx] == 'S':
+                    print('존재')

@@ -115,395 +115,395 @@
 
 # 			card_list.append((shape, number))
 
-# 	return card_list                                
+# # 	return card_list                                
 
-# trump_card_list = making_card_list()    #### 카드 리스트 생성
+# # trump_card_list = making_card_list()    #### 카드 리스트 생성
 
-# random.shuffle(trump_card_list)  ##카드 섞기
+# # random.shuffle(trump_card_list)  ##카드 섞기
 
-# shape_rank_dict = {'clover':1,'heart':2,'diamond':3,'spade':4}  ## 쉐잎의 우열 나눠주기
-# num_rank_dict ={'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9,'10': 10,'J':11,'Q':12,'K':13,'A':14} ## 문자를 포함한 카드숫자에 우열 나눠주기
-# p1_win = 0  ##승리 수 카운트
-# p2_win = 0
+# # shape_rank_dict = {'clover':1,'heart':2,'diamond':3,'spade':4}  ## 쉐잎의 우열 나눠주기
+# # num_rank_dict ={'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9,'10': 10,'J':11,'Q':12,'K':13,'A':14} ## 문자를 포함한 카드숫자에 우열 나눠주기
+# # p1_win = 0  ##승리 수 카운트
+# # p2_win = 0
 
-# while True:
-#     player1 = trump_card_list.pop()
-#     player2 = trump_card_list.pop()
-#     n1 = str(player1[1])    #딕셔너리 밸류값을 추출하기위해 str타입으로 통일
-#     n2 = str(player2[1])    # ''
-#     s1 = player1[0]         ## 보기편하게 shape_rank_dict의 키값을 변수로 지정
-#     s2 = player2[0]
+# # while True:
+# #     player1 = trump_card_list.pop()
+# #     player2 = trump_card_list.pop()
+# #     n1 = str(player1[1])    #딕셔너리 밸류값을 추출하기위해 str타입으로 통일
+# #     n2 = str(player2[1])    # ''
+# #     s1 = player1[0]         ## 보기편하게 shape_rank_dict의 키값을 변수로 지정
+# #     s2 = player2[0]
     
-#     if num_rank_dict[n1] == num_rank_dict[n2]:         ## 두 플레이어의 숫자랭크가 같다면
-#         if shape_rank_dict[s1] > shape_rank_dict[s2]:       ##쉐잎 랭크까지 비교해서 승자 출력후 승자카운트 +1
-#             print(f'{player1} {player2} player1 win!')
-#             p1_win += 1
-#         else :
-#             print(f'{player1} {player2} player2 win!')
-#             p2_win += 1
-#     elif num_rank_dict[n1] > num_rank_dict[n2]:         ## 여기부터는 숫자값 크기 비교후 승자 출력/ 승자카운트 +1
-#         print(f'{player1} {player2} player1 win!')
-#         p1_win += 1
-#     else:
-#         print(f'{player1} {player2} player2 win!')
-#         p2_win += 1
+# #     if num_rank_dict[n1] == num_rank_dict[n2]:         ## 두 플레이어의 숫자랭크가 같다면
+# #         if shape_rank_dict[s1] > shape_rank_dict[s2]:       ##쉐잎 랭크까지 비교해서 승자 출력후 승자카운트 +1
+# #             print(f'{player1} {player2} player1 win!')
+# #             p1_win += 1
+# #         else :
+# #             print(f'{player1} {player2} player2 win!')
+# #             p2_win += 1
+# #     elif num_rank_dict[n1] > num_rank_dict[n2]:         ## 여기부터는 숫자값 크기 비교후 승자 출력/ 승자카운트 +1
+# #         print(f'{player1} {player2} player1 win!')
+# #         p1_win += 1
+# #     else:
+# #         print(f'{player1} {player2} player2 win!')
+# #         p2_win += 1
     
-#     if p1_win == 6 :                      ## 승자카운트가 6이 되면 반복문(게임)종료.
-#         print(f'{p1_win}:{p2_win} Finally player1 win')
-#         break
-#     elif p2_win == 6:
-#         print(f'{p2_win}:{p1_win} Finally player2 win')
-#         break
+# #     if p1_win == 6 :                      ## 승자카운트가 6이 되면 반복문(게임)종료.
+# #         print(f'{p1_win}:{p2_win} Finally player1 win')
+# #         break
+# #     elif p2_win == 6:
+# #         print(f'{p2_win}:{p1_win} Finally player2 win')
+# #         break
 
 
-# sample_list = [11,22,33,55,66]
+# # sample_list = [11,22,33,55,66]
 
-# # 주어진 리스트의 4번째 자리에 있는 항목을 제거하고 변수에 할당해주세요.
+# # # 주어진 리스트의 4번째 자리에 있는 항목을 제거하고 변수에 할당해주세요.
 
-# a = sample_list.pop(3)
+# # a = sample_list.pop(3)
 
-# print(a)
+# # print(a)
 
-# # sample_list의 가장 뒤에 44를 추가해보세요.
+# # # sample_list의 가장 뒤에 44를 추가해보세요.
 
-# sample_list.append(77)
+# # sample_list.append(77)
 
-# print(sample_list)
+# # print(sample_list)
 
-# # 할당해놓은 변수의 값을 sample_list의 2번 index에 추가해 보세요
+# # # 할당해놓은 변수의 값을 sample_list의 2번 index에 추가해 보세요
 
-# sample_list.insert(2,a)
+# # sample_list.insert(2,a)
 
-# print(sample_list)
+# # print(sample_list)
 
-# my_tuple = ( 11,22,33,44,55,66)
-# new_tuple = my_tuple[3:-1]
+# # my_tuple = ( 11,22,33,44,55,66)
+# # new_tuple = my_tuple[3:-1]
 
-# print(new_tuple)
+# # print(new_tuple)
 
-## 얕은복사 :
-# a = [1,2,3,4,5]
-# b = a
+# ## 얕은복사 :
+# # a = [1,2,3,4,5]
+# # b = a
 
-# b[1] = 7
+# # b[1] = 7
 
-# print(a,b)
-
-
-# a  = [1,2,['a','b']]
-
-# b = a[:]
-
-# print(a,b)
-
-# b[2][0] = 0 
-# print(a,b)
-
-# test_list = [1,2,3,7,4,6,5]
-
-# test_list.sort()
-# print(test_list)
-
-# scores = [('eng',88),('sci',90),('math', 80)]
-# # 정렬
-# def check(x):
-#     return x[1]
-
-# print(scores)
-# scores.sort(key=lambda x:x[1])
-# print(scores)
+# # print(a,b)
 
 
-## 6-1 실습 크롤링을 통한 서비스 개발 예제 1
-# A. 입력예시
-# print(de_identify('970103-1234567'))
-# print(de_identify('861123 2345678'))
+# # a  = [1,2,['a','b']]
 
-# B. 출력예시
-# 970103*******
-# 861123******* 
+# # b = a[:]
 
-# def de_identify(id):
-#     if len(id) == 14:
-#         return id[:6]+'*******'
-#     elif len(id) == 13:
-#         a = id.replace(id[6:],'*******')
-#         return a
+# # print(a,b)
 
-# grain_lst = [('고구마',3000), ('감자',2000), ('옥수수',4500),('토란',1300)]
+# # b[2][0] = 0 
+# # print(a,b)
 
-# grain_lst.sort(key=lambda x:x[1],reverse=True)
+# # test_list = [1,2,3,7,4,6,5]
 
-# print(grain_lst[0][0])
+# # test_list.sort()
+# # print(test_list)
+
+# # scores = [('eng',88),('sci',90),('math', 80)]
+# # # 정렬
+# # def check(x):
+# #     return x[1]
+
+# # print(scores)
+# # scores.sort(key=lambda x:x[1])
+# # print(scores)
+
+
+# ## 6-1 실습 크롤링을 통한 서비스 개발 예제 1
+# # A. 입력예시
+# # print(de_identify('970103-1234567'))
+# # print(de_identify('861123 2345678'))
+
+# # B. 출력예시
+# # 970103*******
+# # 861123******* 
+
+# # def de_identify(id):
+# #     if len(id) == 14:
+# #         return id[:6]+'*******'
+# #     elif len(id) == 13:
+# #         a = id.replace(id[6:],'*******')
+# #         return a
+
+# # grain_lst = [('고구마',3000), ('감자',2000), ('옥수수',4500),('토란',1300)]
+
+# # grain_lst.sort(key=lambda x:x[1],reverse=True)
+
+# # print(grain_lst[0][0])
 
 
 
-# def count_vowels(x):
-#     a = x.count('a')
-#     e = x.count('e')
-#     i = x.count('i')
-#     o = x.count('o')
-#     u = x.count('u')
-#     return a+e+i+o+u
+# # def count_vowels(x):
+# #     a = x.count('a')
+# #     e = x.count('e')
+# #     i = x.count('i')
+# #     o = x.count('o')
+# #     u = x.count('u')
+# #     return a+e+i+o+u
 
-# print(count_vowels('apple')) #=> 2
-# print(count_vowels('banana')) #=> 3
+# # print(count_vowels('apple')) #=> 2
+# # print(count_vowels('banana')) #=> 3
 
-# 반복문을 활용한 방법 
-# def sum_of_digit(x):
-#     x = str(x)
-#     result=0
-#     for i in x:
-#         result += int(i)
-#     print(result)
-#     return result
+# # 반복문을 활용한 방법 
+# # def sum_of_digit(x):
+# #     x = str(x)
+# #     result=0
+# #     for i in x:
+# #         result += int(i)
+# #     print(result)
+# #     return result
 
-#반복문을 활용하지 않은 방법
-# def sum_of_digit(x):
-#     lst = map(int,list(str(x)))
+# #반복문을 활용하지 않은 방법
+# # def sum_of_digit(x):
+# #     lst = map(int,list(str(x)))
     
-#     print(sum(lst))
-#     return sum(lst)
+# #     print(sum(lst))
+# #     return sum(lst)
 
 
 
 
-# sum_of_digit(3904) # 16
+# # sum_of_digit(3904) # 16
 
-# 입력 예시
-# # mass percent.py 실행 시
-# 1.소금물의 농도(%)와 소금물의 양(g)을 입력하십시오: 1% 400g
-# 2.소금물의 농도(%)와 소금물의 양(g)을 입력하십시오: 8% 300g
-# Done
+# # 입력 예시
+# # # mass percent.py 실행 시
+# # 1.소금물의 농도(%)와 소금물의 양(g)을 입력하십시오: 1% 400g
+# # 2.소금물의 농도(%)와 소금물의 양(g)을 입력하십시오: 8% 300g
+# # Done
 
-# 출력 예시
-# 4.0% 700.0g
+# # 출력 예시
+# # 4.0% 700.0g
 
-# salt_list = []
-# water_list = []
+# # salt_list = []
+# # water_list = []
 
-# for i in range(5):
-#     lst = input('소금물의 농도(%)와 소금물의 양(g)을 입력하시오: ').split()
-#     if lst[0] == 'Done':
-#         break
-#     else:
-#         ratio = int(lst[0][:-1])
-#         ratio = ratio/100
-#         water = float(lst[1][:-1])
-#         salt_list.append(ratio*water)
-#         water_list.append(water)
+# # for i in range(5):
+# #     lst = input('소금물의 농도(%)와 소금물의 양(g)을 입력하시오: ').split()
+# #     if lst[0] == 'Done':
+# #         break
+# #     else:
+# #         ratio = int(lst[0][:-1])
+# #         ratio = ratio/100
+# #         water = float(lst[1][:-1])
+# #         salt_list.append(ratio*water)
+# #         water_list.append(water)
 
-# salt = sum(salt_list)
-# water = sum(water_list)
+# # salt = sum(salt_list)
+# # water = sum(water_list)
 
-# print(f'{round((salt/water)*100,1)}%,{round((water),2)}g')
+# # print(f'{round((salt/water)*100,1)}%,{round((water),2)}g')
 
     
-# A.    입력 예시 
-# ['eat','tea','tan','ate','nat','bat']
+# # A.    입력 예시 
+# # ['eat','tea','tan','ate','nat','bat']
 
-# B.    출력 예시 
-# [ ['eat', 'tea', 'ate'], ['tan', 'nat'], ['bat'] ] 
+# # B.    출력 예시 
+# # [ ['eat', 'tea', 'ate'], ['tan', 'nat'], ['bat'] ] 
 
-# print('a')
+# # print('a')
 
 
-## 7-1 실습
+# ## 7-1 실습
 
-class Nationality():
+# class Nationality():
     
-    def __init__(self,name):
-        self.name = name
+#     def __init__(self,name):
+#         self.name = name
     
-    def output(self):
-        return (f'나의 국적은 {self.name}')
+#     def output(self):
+#         return (f'나의 국적은 {self.name}')
         
 
 
-korea_nationality = Nationality("대한민국")
-print(korea_nationality.output()) # 나의 국적은 대한민국
+# korea_nationality = Nationality("대한민국")
+# print(korea_nationality.output()) # 나의 국적은 대한민국
 
 
-## 7-3 실습
+# ## 7-3 실습
 
-# 1 + 2
-# 2 – 1
-# 3 * 4
-# 4 / 0
+# # 1 + 2
+# # 2 – 1
+# # 3 * 4
+# # 4 / 0
 
 
-class Calculator():
+# class Calculator():
     
-    def add(x,y):
-        return (f'{x} + {y} = {x + y}')
+#     def add(x,y):
+#         return (f'{x} + {y} = {x + y}')
     
-    def substract(x,y):
-        return (f'{x} - {y} = {x - y}')
+#     def substract(x,y):
+#         return (f'{x} - {y} = {x - y}')
     
-    def multuply(x,y):
-        return (f'{x} * {y} = {x * y}')
+#     def multuply(x,y):
+#         return (f'{x} * {y} = {x * y}')
     
-    def divide(x,y):
+#     def divide(x,y):
         
-        try:
-            return (f'{x} / {y} = {x / y}')
-        except(ZeroDivisionError):
-            return (f'0으로 나눌 수 없습니다.')
+#         try:
+#             return (f'{x} / {y} = {x / y}')
+#         except(ZeroDivisionError):
+#             return (f'0으로 나눌 수 없습니다.')
 
-print(Calculator.add(1,2))
-print(Calculator.substract(2,1))
-print(Calculator.multuply(3,4))
-print(Calculator.divide(4,0)) 
+# print(Calculator.add(1,2))
+# print(Calculator.substract(2,1))
+# print(Calculator.multuply(3,4))
+# print(Calculator.divide(4,0)) 
 
-import math
+# import math
 
 
-def fee(minutes, distance):
-    ## 대여비 계산
-    lental_time = math.ceil(minutes/10) 
-    lental_charge = 1200
+# def fee(minutes, distance):
+#     ## 대여비 계산
+#     lental_time = math.ceil(minutes/10) 
+#     lental_charge = 1200
     
-    lental_fee = lental_time * lental_charge
-    ## 보험료 계산
-    ins_charge = 525
-    ins_time, injury_time = divmod(minutes, 30)
-    if injury_time >=20:
-        ins_time += 1
+#     lental_fee = lental_time * lental_charge
+#     ## 보험료 계산
+#     ins_charge = 525
+#     ins_time, injury_time = divmod(minutes, 30)
+#     if injury_time >=20:
+#         ins_time += 1
     
-    insurance_fee = ins_charge * ins_time
-    ## 주행요금 계산
-    dft_charge = 170
-    sale_charge = int(170 * (1/2))
+#     insurance_fee = ins_charge * ins_time
+#     ## 주행요금 계산
+#     dft_charge = 170
+#     sale_charge = int(170 * (1/2))
     
-    if distance > 100:
-        dis1, dis2  = 100, distance - 100
-        driving_fee = dis1 * dft_charge + dis2 * sale_charge
+#     if distance > 100:
+#         dis1, dis2  = 100, distance - 100
+#         driving_fee = dis1 * dft_charge + dis2 * sale_charge
     
-    else:
-        distance = distance
-        driving_fee = distance * dft_charge
+#     else:
+#         distance = distance
+#         driving_fee = distance * dft_charge
          
-    return (f'대여요금: {lental_fee}\n보험료: {insurance_fee}\n주행요금: {driving_fee}\n카쉐어링 서비스 요금:{lental_fee+insurance_fee+driving_fee}')
+#     return (f'대여요금: {lental_fee}\n보험료: {insurance_fee}\n주행요금: {driving_fee}\n카쉐어링 서비스 요금:{lental_fee+insurance_fee+driving_fee}')
 
-print(fee(600, 110))
+# print(fee(600, 110))
 
 
 
-## 7-5실습
-import random
-class ClassHelper():
+# ## 7-5실습
+# import random
+# class ClassHelper():
     
-    def __init__(self,name):
-        self.name = name
+#     def __init__(self,name):
+#         self.name = name
         
-    def pick(self,num):
-        result = random.sample(self.name, k=num)
-        return result
+#     def pick(self,num):
+#         result = random.sample(self.name, k=num)
+#         return result
         
-    def match_pair(self):
+#     def match_pair(self):
         
-        mate_list = []
-        lst = self.name[:]
+#         mate_list = []
+#         lst = self.name[:]
         
-        ran = len(lst)//2
-        random.shuffle(lst)
+#         ran = len(lst)//2
+#         random.shuffle(lst)
         
-        for i in range(ran):
-            temp = []
+#         for i in range(ran):
+#             temp = []
             
-            if len(lst) <= 3:
-                temp.append(lst)
+#             if len(lst) <= 3:
+#                 temp.append(lst)
     
-            else:
-                for j in range(2):
-                    temp.append(lst.pop())
+#             else:
+#                 for j in range(2):
+#                     temp.append(lst.pop())
             
-            mate_list.append(temp)        
-        return mate_list
+#             mate_list.append(temp)        
+#         return mate_list
 
-ch = ClassHelper(['김해피', '이해킹', '조민지', '박영수', '정민수'])
-
-
-print(ch.pick(1))
-print(ch.pick(1))
-print(ch.pick(2))
-print(ch.pick(3))
-print(ch.pick(4))
-
-print(ch.match_pair())
+# ch = ClassHelper(['김해피', '이해킹', '조민지', '박영수', '정민수'])
 
 
-## 7-6 과제
+# print(ch.pick(1))
+# print(ch.pick(1))
+# print(ch.pick(2))
+# print(ch.pick(3))
+# print(ch.pick(4))
 
-class Doggy():
-    num_of_dogs = 0
-    birth_of_dogs = 0
+# print(ch.match_pair())
 
-    def __init__(self,name,kind):
-        self.name = name
-        self.kind = kind
-        Doggy.num_of_dogs += 1
+
+# ## 7-6 과제
+
+# class Doggy():
+#     num_of_dogs = 0
+#     birth_of_dogs = 0
+
+#     def __init__(self,name,kind):
+#         self.name = name
+#         self.kind = kind
+#         Doggy.num_of_dogs += 1
         
-    def bark(self):
-        return (f'{self.name}: 왈!왈!')
+#     def bark(self):
+#         return (f'{self.name}: 왈!왈!')
     
-    def death(self):
-        Doggy.num_of_dogs -= 1
-        del self
+#     def death(self):
+#         Doggy.num_of_dogs -= 1
+#         del self
         
-    def birth(self):
-        Doggy.birth_of_dogs += 1
+#     def birth(self):
+#         Doggy.birth_of_dogs += 1
     
-    @classmethod
-    def get_status(cls):
-        print(f'강아지 수: {cls.num_of_dogs}')
-        print(f'새로태어난 강아지 수: {cls.birth_of_dogs}')
+#     @classmethod
+#     def get_status(cls):
+#         print(f'강아지 수: {cls.num_of_dogs}')
+#         print(f'새로태어난 강아지 수: {cls.birth_of_dogs}')
         
-dog1 = Doggy('somi','Maltiz')
-dog2 = Doggy('dubu','Hound')
-dog3 = Doggy('jjongE','Jindotgae')
+# dog1 = Doggy('somi','Maltiz')
+# dog2 = Doggy('dubu','Hound')
+# dog3 = Doggy('jjongE','Jindotgae')
 
-dog4 = Doggy('jjangA','Maltiz')
-dog5 = Doggy('Hiii','Hound')
+# dog4 = Doggy('jjangA','Maltiz')
+# dog5 = Doggy('Hiii','Hound')
 
-dog4.birth()
-dog5.birth()
-
-
-print(dog1.bark())
-Doggy.get_status()
-
-## 7-7 과제
+# dog4.birth()
+# dog5.birth()
 
 
-def collatz(num):
+# print(dog1.bark())
+# Doggy.get_status()
+
+# ## 7-7 과제
+
+
+# def collatz(num):
     
-    if num % 2 == 0:
-        count = 0
-        for i in range(500):
-            count += 1
-            num = num % 2
-            if num == 1:
-                break
-        if num != 1:
-            return -1
-        else:
-            return count
+#     if num % 2 == 0:
+#         count = 0
+#         for i in range(500):
+#             count += 1
+#             num = num % 2
+#             if num == 1:
+#                 break
+#         if num != 1:
+#             return -1
+#         else:
+#             return count
         
-    elif num % 2 == 1:
-        num = num*3+1
-        count = 0
-        for i in range(500):
-            count += 1
-            num = num % 2
-            if num == 1:
-                break
-        if num != 1:
-            return -1
-        else:
-            return count
+#     elif num % 2 == 1:
+#         num = num*3+1
+#         count = 0
+#         for i in range(500):
+#             count += 1
+#             num = num % 2
+#             if num == 1:
+#                 break
+#         if num != 1:
+#             return -1
+#         else:
+#             return count
 
-print(collatz(6)) #=> 8
+# print(collatz(6)) #=> 8
 # collatz(16) #=> 4
 # collatz(27) #=> 111
 # collatz(626331) #=> -1
@@ -519,103 +519,141 @@ print(collatz(6)) #=> 8
 
 ##Driver's code
 
-from datetime import datetime
+# from datetime import datetime
 
-class Person():
-    def __init__(self,name,age):
-        self.name = name
-        self.age = age
+# class Person():
+#     def __init__(self,name,age):
+#         self.name = name
+#         self.age = age
     
-    def get_age(name,age):
+#     def get_age(name,age):
         
-        age = datetime.today().year - age - 1
-        return Person(name, age)
+#         age = datetime.today().year - age - 1
+#         return Person(name, age)
     
-    def check_age(self):
-        if self.age >= 19:
-            return True
-        else:
-            return False
+#     def check_age(self):
+#         if self.age >= 19:
+#             return True
+#         else:
+#             return False
 
 
-person1 = Person('Mark', 20)
-person2 = Person.get_age('Rohan', 1992)
+# person1 = Person('Mark', 20)
+# person2 = Person.get_age('Rohan', 1992)
 
-print(person1.name, person1.age) 
-print(person2.name, person2.age)
-print(person1.check_age())
-print(person2.check_age())
+# print(person1.name, person1.age) 
+# print(person2.name, person2.age)
+# print(person1.check_age())
+# print(person2.check_age())
 
-## 8-3 예제
+# ## 8-3 예제
 
-class PublicTransport():
-    total_passenger = 0
-    passenger = 0 
+# class PublicTransport():
+#     total_passenger = 0
+#     passenger = 0 
     
     
     
-    def __init__(self,name,fare):
-        self.name = name
-        self.fare = fare
+#     def __init__(self,name,fare):
+#         self.name = name
+#         self.fare = fare
         
-    def get_in(self):
-        self.passenger += 1
-        PublicTransport.total_passenger += 1
+#     def get_in(self):
+#         self.passenger += 1
+#         PublicTransport.total_passenger += 1
         
-    def get_off(self):
-        self.passenger -= 1 
+#     def get_off(self):
+#         self.passenger -= 1 
     
-    def profit(self):
-        return PublicTransport.total_passenger * self.fare
+#     def profit(self):
+#         return PublicTransport.total_passenger * self.fare
 
-tp1 = PublicTransport('bus',1250)
-tp2 = PublicTransport('taxi',3750)
-tp1.get_in()
-
-
-
-print(tp1.passenger,PublicTransport.total_passenger)
-print(tp2.passenger,PublicTransport.total_passenger)
-
-tp1.profit()
+# tp1 = PublicTransport('bus',1250)
+# tp2 = PublicTransport('taxi',3750)
+# tp1.get_in()
 
 
 
-class PublicTransport():
-    total_passenger = 0
-    passenger = 0
+# print(tp1.passenger,PublicTransport.total_passenger)
+# print(tp2.passenger,PublicTransport.total_passenger)
+
+# tp1.profit()
+
+
+
+# class PublicTransport():
+#     total_passenger = 0
+#     passenger = 0
     
-    fare = 1250
+#     fare = 1250
     
-    def __init__(self,name):
-        self.name = name
+#     def __init__(self,name):
+#         self.name = name
 
-        PublicTransport.total_passenger += 1
+#         PublicTransport.total_passenger += 1
         
-    def get_in(self):
-        PublicTransport.passenger += 1
+#     def get_in(self):
+#         PublicTransport.passenger += 1
         
-    def get_off(self):
-        PublicTransport.passenger -= 1 
+#     def get_off(self):
+#         PublicTransport.passenger -= 1 
     
-    @classmethod
-    def profit(cls):
-        return PublicTransport.total_passenger * PublicTransport.fare
+#     @classmethod
+#     def profit(cls):
+#         return PublicTransport.total_passenger * PublicTransport.fare
 
-psg1 = PublicTransport('kebin')
-psg2 = PublicTransport('ungseo')
-psg3 = PublicTransport('kwang')
-psg4 = PublicTransport('shift')
-psg5 = PublicTransport('ctrl')
+# psg1 = PublicTransport('kebin')
+# psg2 = PublicTransport('ungseo')
+# psg3 = PublicTransport('kwang')
+# psg4 = PublicTransport('shift')
+# psg5 = PublicTransport('ctrl')
 
-psg1.get_in()
-psg2.get_in()
-psg3.get_in()
-psg4.get_in()
-psg5.get_in()
+# psg1.get_in()
+# psg2.get_in()
+# psg3.get_in()
+# psg4.get_in()
+# psg5.get_in()
 
-psg4.get_off()
-psg3.get_off()
+# psg4.get_off()
+# psg3.get_off()
 
-print(PublicTransport.passenger)
-print(PublicTransport.profit())
+# print(PublicTransport.passenger)
+# print(PublicTransport.profit())
+
+## SW min max
+
+# documents = ['java', 'python', 's5g4', 's5g2', 'spring', 'django', 'extra']
+# python_class = [documents[i+1] for i in range(0, len(documents)-2, 2)]
+
+# print(python_class)
+
+
+# lst = ['hi','y','by']
+
+# lst.extend('summer')
+# print(lst)
+
+# print(lst[3])
+
+
+# di = [0, 1, 0, -1]
+# dj = [1, 0, -1, 0]
+
+# N = 3
+
+# for i in range(N):
+#     for j in range(N):
+#         for k in range(4):
+#             ni, nj = i+di[k], j+dj[k]
+#             if 0 <= ni < N  and 0 <= nj < N:
+                
+#                 print(i, j, ni,nj)
+
+
+N = 3 
+for i in range(N):
+    for j in range(N):
+        for di, dj in [[0,1],[1,0],[0,-1],[-1,0]]:
+            ni, nj = i+di, j+dj
+            if 0<=ni<N and 0<= nj<N:
+                print(i,j,ni,nj)

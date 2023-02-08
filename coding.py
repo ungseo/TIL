@@ -2626,22 +2626,15 @@ TT
 # #         if check(i,j) != None:
 # #             cnt += isExist(check(i,j)[0],check(i,j)[1])
 
-# if cnt == 0:
-#     print('미발견')
-# else:
-#     print('발견')
+## Direct 사용하기
 
+# lst = [[3,5,4],[1,1,2],[1,3,9]]
 
-## 비트배열로 마스킹 처리하기
-# lst = [3,5,4,2]
-# bit = list(map(int,input().split()))
-# temp = []
-# def getSum(lst):
-#     sum = 0
-#     for i in lst:
-#         sum += i
-#     return sum
+# y,x = map(int,input().split())
 
+# ii = [0,1,0,-1]
+# ji = [1,0,-1,0]
+# temp = [] 
 # for i in range(4):
 #     if bit[i] == 1:
 #         temp.append(lst[i])
@@ -2713,3 +2706,4 @@ for i in range(2):
             maxj = j
             maxV = rst
 print(f'({maxi},{maxj})')
+    

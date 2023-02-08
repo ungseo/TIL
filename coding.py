@@ -2043,213 +2043,19 @@ TT
 #     ['A','B','G','K'],
 #     ['T','T','A','B'],
 #     ['A','C','T','T']]
-<<<<<<< HEAD
 
 # st = [list(input()) for i in range(2)]
 # print(st)
-=======
-
-# st = [list(input()) for i in range(2)]
-# # print(st)
-# # def check(x,y):
-# #     if board[x][y:y+2] == st[0]:
-# #         return 1
-# #     else:
-# #         return 0
+# def check(x,y):
+#     if board[x][y:y+2] == st[0]:
+#         return 1
+#     else:
+#         return 0
     
 
-# # cnt = 0
-# # for i in range(3):
-# #     for j in range(3):
-# #         cnt += check(i,j)
-        
-# # if cnt > 0 :
-# #     print(f'발견{cnt}개')
-# # else:
-# #     print(f'미발견')
-# def findptn(by,bx):
-#     for dy in range(2):
-#         for dx in range(2):
-#             if board[by+dy][bx+dx]!=st[dy][dx]:
-#                 return 0
-#     return 1
-            
-# cnt = 0 
-# for i in range(2):
-#     for j in range(3):
-#         if findptn(i,j):
-#             cnt += 1 
-
-# if cnt:
-#     print(f'발견 {cnt}개')
-# else:
-#     print('미발견')
-
-## 합격자 발표일
-
-# lst = [3,7,4,1,2,6]
-
-# univer = [list(map(int,input().split())) for i in range(2)]
-
->>>>>>> 96b9e40d71bd9719611abc6e0508ab1100044983
-# def check(x,y):
-#     for i in lst:
-#         if i == univer[x][y]:
-#             return 1
-#     return 0
-
-
-
-# for i in range(2):
-#     for j in range(2):
-#         if check(i,j):
-#             print('OK',end = ' ')
-#         else:
-#             print('NO',end =' ')
-#     print()
-
-## 동명이인
-
-# def isSame(name1,name2):
-#     flag = name1 == name2
-#     if flag:
-#         return 1
-#     else:
-#         return 0
-
-# n1 = input()
-# n2 = input()
-
-# if isSame(n1,n2):
-#     print('동명')
-# else:
-#     print('남남')
-
-## 보물찾기
-
-# lst = [['G','K','T'],['P','A','C']]
-
-# a, b = input().split()
-
-# def check(x,y,z):
-#     if lst[x][y] == z:
-#         return 1
-#     else:
-#         return 0
-
-# A = 0
-# B = 0
-# for i in range(2):
-#     for j in range(3):
-#         A += check(i,j,a)
-#         B += check(i,j,b)
-
-# if A + B == 0 :
-#     print('미발견')
-# elif A > 0 and B > 0:
-#     print('대발견')
-# else:
-#     print('중발견') 
-
-## 입력받은 비트배열로 마스킹하기
-
-# vect = [3,5,4,2,6,6,5]
-# bit = list(map(int,input().split()))
-
-# for i in range(len(bit)):
-#     if bit[i] == 1:
-#         bit[i] = 7
-
-# print(''.join(list(map(str,bit))))
-
-## 금고털이
-
-# password = [3,7,4,9]
-
-# def isSame(lst):
-#     if lst == password:
-#         print('pass')
-#     else:
-#         print('fail')
-
-# ps = list(map(int,input().split()))
-
-# isSame(ps)
-
-## 도와주세요 다이어트
-
-# levelTable = [[10,20],[30,60],[100,150],[200,300]]
-# lev = [0 for i in range(4)]
-# lst = list(map(int,input().split()))
-
-# def checkkcal(num):
-#     for i in range(4):
-#         if num in range(levelTable[i][0],levelTable[i][1]+1):
-#             lev[i] += 1
-
-# for i in range(len(lst)):
-#     checkkcal(lst[i])
-
-# for i in range(4):
-#     print(f'lev{i}:{lev[i]}')
-
-
-## 컬러찾기
-
-# mapx = [[3,55,42],[-5,-9,-10]]
-
-# pix = [list(map(int,input().split())) for i in range(2)]
-
-# def check(x,y):
-#     for i in range(2):
-#         if pix[x][y] in mapx[i]:
-#             return 1
-#     return 0
-
-# for i in range(2):
-#     for j in range(2):
-#         if check(i,j):
-#             print('Y',end = ' ')
-#         else:
-#             print('N',end = ' ')
-#     print()
-
-## 비트배열에서 min 값의 인덱스와 값 구하기
-
-# arr = list(map(int,input().split()))
-
-# masking_idx = [0,2,4]
-
-# for i in masking_idx:
-#     arr[i] += 1
-
-# minV = arr[0]
-# idx = 0
-# for i in range(0,6,2):
-#     if minV > arr[i]:
-#         minV = arr[i]
-#         idx = i
-# print(f'arr[{idx}]={minV-1}')
-
-## masking 후 범위안의숫자 존재여부 구하기
-
-# lst = [[3,1,9],[7,2,1],[1,0,8]]
-
-# mask = [list(map(int,input().split())) for i in range(3)]
-
-# def check(x,y):
-#     if mask[x][y] == 1:
-#         return x,y
-
-# def isExist(x,y):
-#     if 3 <= lst[x][y] <= 5:
-#         return 1
-#     else:
-#         return 0
 # cnt = 0
 # for i in range(3):
 #     for j in range(3):
-<<<<<<< HEAD
 #         cnt += check(i,j)
         
 # if cnt > 0 :
@@ -2615,57 +2421,27 @@ TT
 # else:
 #     print('존재하지 않음')
 
-st = list(input())
+# st = list(input())
 
-for i in range(len(st)):
-    idx = i
-    if st[idx] == 'G':
-        idx += 1
-        if st[idx] == 'H':
-            idx += 1
-            if st[idx] == 'O':
-                idx += 1
-                if st[idx] == 'S':
-                    print('존재')
-=======
-#         if check(i,j) != None:
-#             cnt += isExist(check(i,j)[0],check(i,j)[1])
+# for i in range(len(st)):
+#     idx = i
+#     if st[idx] == 'G':
+#         idx += 1
+#         if st[idx] == 'H':
+#             idx += 1
+#             if st[idx] == 'O':
+#                 idx += 1
+#                 if st[idx] == 'S':
+#                     print('존재')
 
-# if cnt == 0:
-#     print('미발견')
-# else:
-#     print('발견')
+## Direct 사용하기
 
+# lst = [[3,5,4],[1,1,2],[1,3,9]]
 
-## 비트배열로 마스킹 처리하기
-# lst = [3,5,4,2]
-# bit = list(map(int,input().split()))
-# temp = []
-# def getSum(lst):
-#     sum = 0
-#     for i in lst:
-#         sum += i
-#     return sum
+# y,x = map(int,input().split())
 
+# ii = [0,1,0,-1]
+# ji = [1,0,-1,0]
+# temp = [] 
 # for i in range(4):
-#     if bit[i] == 1:
-#         temp.append(lst[i])
-
-# print(getSum(temp))
-
-## 레이더 만들기
-
-st = input()
-
-arr = [list('ABCDE'),list('FGHIJ'),list('KLMNO'),list('PQRST'),list('UVWXY')]
-
-def Find(s):
-    for i in range(5):
-        for j in range(5):
-            if arr[i][j] == st:
-                return i,j
-    return 0
-
-x,y = Find(st)[0],Find(st)[1]
-print(f'{x-2},{y-2}')
->>>>>>> 96b9e40d71bd9719611abc6e0508ab1100044983
+    

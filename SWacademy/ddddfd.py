@@ -1,13 +1,16 @@
-def getsum(stn):
-        sum = 0 
-        for i in range(N-M+1):
-            sum += lst[stn]
-            stn += 1
-        return sum
+def bbsort(arr):
+    for i in range(N-1):
+        for j in range(N-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
 
 
-N=5
-M=3     
-lst = [1,2,3,4,5]
 
-print(getsum(1))
+T = int(input())
+
+for tc in range(1,T+1):
+    N, M, K = map(int, input().split())
+    guest = map(int,input().split())
+    bbsort(guest)
+    bbang = '0' * M + str(K)
+    bbang *= 100

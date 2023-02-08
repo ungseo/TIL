@@ -2043,11 +2043,9 @@ TT
 #     ['A','B','G','K'],
 #     ['T','T','A','B'],
 #     ['A','C','T','T']]
-<<<<<<< HEAD
 
 # st = [list(input()) for i in range(2)]
 # print(st)
-=======
 
 # st = [list(input()) for i in range(2)]
 # # print(st)
@@ -2091,7 +2089,6 @@ TT
 
 # univer = [list(map(int,input().split())) for i in range(2)]
 
->>>>>>> 96b9e40d71bd9719611abc6e0508ab1100044983
 # def check(x,y):
 #     for i in lst:
 #         if i == univer[x][y]:
@@ -2249,7 +2246,6 @@ TT
 # cnt = 0
 # for i in range(3):
 #     for j in range(3):
-<<<<<<< HEAD
 #         cnt += check(i,j)
         
 # if cnt > 0 :
@@ -2615,21 +2611,20 @@ TT
 # else:
 #     print('존재하지 않음')
 
-st = list(input())
+# st = list(input())
 
-for i in range(len(st)):
-    idx = i
-    if st[idx] == 'G':
-        idx += 1
-        if st[idx] == 'H':
-            idx += 1
-            if st[idx] == 'O':
-                idx += 1
-                if st[idx] == 'S':
-                    print('존재')
-=======
-#         if check(i,j) != None:
-#             cnt += isExist(check(i,j)[0],check(i,j)[1])
+# for i in range(len(st)):
+#     idx = i
+#     if st[idx] == 'G':
+#         idx += 1
+#         if st[idx] == 'H':
+#             idx += 1
+#             if st[idx] == 'O':
+#                 idx += 1
+#                 if st[idx] == 'S':
+#                     print('존재')
+# #         if check(i,j) != None:
+# #             cnt += isExist(check(i,j)[0],check(i,j)[1])
 
 # if cnt == 0:
 #     print('미발견')
@@ -2655,17 +2650,66 @@ for i in range(len(st)):
 
 ## 레이더 만들기
 
-st = input()
+# st = input()
 
-arr = [list('ABCDE'),list('FGHIJ'),list('KLMNO'),list('PQRST'),list('UVWXY')]
+# arr = [list('ABCDE'),list('FGHIJ'),list('KLMNO'),list('PQRST'),list('UVWXY')]
 
-def Find(s):
-    for i in range(5):
-        for j in range(5):
-            if arr[i][j] == st:
-                return i,j
-    return 0
+# def Find(s):
+#     for i in range(5):
+#         for j in range(5):
+#             if arr[i][j] == st:
+#                 return i,j
+#     return 0
 
-x,y = Find(st)[0],Find(st)[1]
-print(f'{x-2},{y-2}')
->>>>>>> 96b9e40d71bd9719611abc6e0508ab1100044983
+# x,y = Find(st)[0],Find(st)[1]
+# print(f'{x-2},{y-2}')
+
+
+# lst = [['A','B','G','K'],['T','T','A','B'],['A','C','C','D']]
+
+# pattern = [list(input()) for i in range(2)]
+
+# def Find(y,x):
+#     temp = []
+#     for i in range(2):
+#         temp.append(list(lst[y+i][x:x+2]))
+
+#     if temp == pattern:
+#         return 1
+#     else:
+#         return 0
+# cnt = 0
+# for i in range(2):
+#     for j in range(3):
+#         rst = Find(i,j)
+#         cnt += rst
+
+# if cnt >= 1:
+#     print(f'발견({cnt}개)')
+# else:
+#     print('미발견')
+
+
+Map = [[3,5,1],[3,8,1],[1,1,5]]
+
+bitarray = [list(map(int,input().split())) for i in range(2)]
+
+def ma_hap(y,x):
+    sum= 0 
+    for i in range(2):
+        for j in range(2):
+            if bitarray[i][j] == 1:
+                sum += Map[y+i][x+j]
+    return sum
+
+maxV = ma_hap(0,0)
+maxi = 0
+maxj = 0
+for i in range(2):
+    for j in range(2):
+        rst = ma_hap(i,j)
+        if rst > maxV:
+            maxi = i
+            maxj = j
+            maxV = rst
+print(f'({maxi},{maxj})')

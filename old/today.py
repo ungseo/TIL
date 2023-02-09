@@ -371,23 +371,25 @@
 #         print(arr[i][j], end =' ')
 #     print()
 
+#
+# lst = [[0 for i in range(4)] for j in range(4)]
+#
+# for i in range(3):
+#     L, N = input().split()
+#     N = int(N)
+#
+#     if L == 'G':
+#         for i in range(4):
+#             lst[N][i] = 1
+#
+#     else:
+#         for i in range(4):
+#             lst[i][N] = 1
+#
+# for i in range(4):
+#     for j in range(4):
+#         print(lst[i][j],end = ' ')
+#     print()
 
-lst = [[0 for i in range(4)] for j in range(4)]
-
-for i in range(3):
-    L, N = input().split()
-    N = int(N)
-
-    if L == 'G':
-        for i in range(4):
-            lst[N][i] = 1
-
-    else:
-        for i in range(4):
-            lst[i][N] = 1
-
-for i in range(4):
-    for j in range(4):
-        print(lst[i][j],end = ' ')
-    print()
+##
 

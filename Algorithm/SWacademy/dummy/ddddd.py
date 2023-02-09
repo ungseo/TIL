@@ -67,25 +67,6 @@
 
 T = int(input())
 
-for tc in range(1,1+T):
-    dic = {}
-    
-    str1 = list(set(input()))  # 세트로 받아서 중복 문자 제거
-    str2 = list(input())
-    for i in str1:          
-        cnt = 0
-        for j in str2:    
-            if i == j:
-                cnt += 1
-        dic[i] = cnt        ## 카운트해서 딕셔너리 추가
-    
-    ans = list(dic.values())     
-    
-    for i in range(len(ans)-1):       # ans 버블정렬
-        for j in range(len(ans)-1):
-            if ans[j] > ans[j+1]:
-                ans[j],ans[j+1] = ans[j+1],ans[j]
-                
-    print(f'#{tc} {ans[-1]}')
-                        
+for tc in range(1,T+1):
+    print(tc)
     

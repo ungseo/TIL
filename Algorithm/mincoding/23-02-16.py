@@ -1,5 +1,5 @@
 # n = int(input())
-# arr = [list(map(int,input().split())) for _ in range(n)]
+# arr = [list(m(int,input().split())) for _ in range(n)]
 
 
 # def dfs(idx):
@@ -13,7 +13,7 @@
 ## 2층에서 경로 출력
 
 # n = int(input())
-# arr = [list(map(int,input().split())) for _ in range(n)]
+# arr = [list(m(int,input().split())) for _ in range(n)]
 # path = [0] * 3
 
 # def dfs(level,idx):
@@ -30,7 +30,7 @@
 ## 문자열 노드 DFS
 
 # st = input()
-# arr = [list(map(int,input().split())) for _ in range(8)]
+# arr = [list(m(int,input().split())) for _ in range(8)]
 
 # def dfs(level,idx):
 #     print(st[idx],end='')
@@ -43,7 +43,7 @@
 ## DFS 시작하기
 
 # n = int(input())
-# arr = [list(map(int,input().split())) for _ in range(n)]
+# arr = [list(m(int,input().split())) for _ in range(n)]
 # def dfs(idx):
 #     print(idx, end=' ')
 #     for i in range(n):
@@ -62,7 +62,7 @@
 #        [1,0,0,0,0,0],
 #        [0,0,0,0,0,0]]
 #
-# A, B = map(int,input().split())
+# A, B = m(int,input().split())
 # used = [0]*6
 # used[A-1] = 1
 # minV = 21e8
@@ -121,7 +121,7 @@
 
 ## 모두 같은 숫자일까?
 #
-# arr = [list(map(int,input().split())) for _ in range(3)]
+# arr = [list(m(int,input().split())) for _ in range(3)]
 # temp = [0] * 3
 #
 #
@@ -141,8 +141,8 @@
 
 
 
-# lst1 = list(map(int,input().split()))
-# lst2 = list(map(int,input().split()))
+# lst1 = list(m(int,input().split()))
+# lst2 = list(m(int,input().split()))
 # rst = []
 # a = b = 0
 # while 1:
@@ -164,7 +164,7 @@
 
 ## 블럭을 감싸는 사각프레임 좌표 구하기
 
-# block = [list(map(int,input().split())) for i in range(4)]
+# block = [list(m(int,input().split())) for i in range(4)]
 # flag = 1
 # for i in range(4):
 #     for j in range(5):
@@ -184,20 +184,82 @@
 
 ## 톱니바퀴
 
-def roll(x):
-    temp = []
-    for i in range(3):
-        temp.append(arr[i][x])
-    temp = [0] + temp
-    temp[0] = temp[3]
-    return temp[:3]
+# def roll(x):
+#     temp = []
+#     result = [0,0,0]
+#     for i in range(3):
+#         temp.append(arr[i][x])
+#     result[0] = temp[2]
+#     result[1] = temp[0]
+#     result[2] = temp[1]
+
+#     for i in range(3):
+#         arr[i][x] = result[i]
+
+# arr = [[3,2,5,3],
+#        [7,6,1,6],
+#        [4,9,2,7]]
+# lst = list(m(int,input().split()))
+
+# for idx in range(4):
+#     for r in range(lst[idx]):
+#         roll(idx)
 
 
-arr = [[3,2,5,3],
-       [7,6,1,6],
-       [4,9,2,7]]
-lst = list(map(int,input().split()))
+# for i in range(3):
+#     for j in range(4):
+#         print(arr[i][j], end='')
+#     print()
 
 
-for i in lst:
-    for j in range(i):
+# m = ['_'] * 5
+# idx, life = map(int,input().split())
+
+# def bug(i,life):
+#     if i == 5:
+#         return
+#     if life == 0:
+#         m[i] = '_'
+#         print(''.join(m))
+#         return
+
+#     m[i] = str(life)
+#     print(''.join(m))
+#     m[i] = '_'
+#     bug(i+1,life-1)
+    
+
+# bug(idx,life)
+
+def monster_mov(sec,m,y,x):
+    movey = [0,1,0,-1]
+    movex = [1,0,-1,0]
+    idx = sec % 4
+
+    ny = y + movey[idx]
+    nx = x + movex[idx]
+
+    if 0 <= ny <= 3 and 0 <= nx <= 2:
+        if map[ny][nx] == '_':
+            map[ny][nx] = map[y][x]
+            map[y][x] = '_'
+            msidx[m] = (ny,nx)
+
+monster = ['A','C','D']
+msidx = [0,0,0]
+map = [list(input()) for _ in range(4)]
+
+for m in range(3):
+    for i in range(4):
+        for j in range(3):
+            if map[i][j] == monster[m]:
+                msidx[m] = (i,j)
+
+for i in range(5):
+    for j in range(3):
+        monster_mov(i,j, *msidx[j])
+
+for i in range(4):
+    for j in range(3):
+        print(map[i][j], end='')
+    print()

@@ -231,10 +231,10 @@
 
 # bug(idx,life)
 
-def monster_mov(sec,m,y,x):
+def monster_mov(sec,m,y,x):               ## 몬스터이동 (초, 몬스터 종류, y,x)
     movey = [0,1,0,-1]
     movex = [1,0,-1,0]
-    idx = sec % 4
+    idx = sec % 4         ## 시간초 % 4연산해서 방향 반복
 
     ny = y + movey[idx]
     nx = x + movex[idx]
@@ -243,7 +243,7 @@ def monster_mov(sec,m,y,x):
         if map[ny][nx] == '_':
             map[ny][nx] = map[y][x]
             map[y][x] = '_'
-            msidx[m] = (ny,nx)
+            msidx[m] = (ny,nx)      ## 옮기고 몬스터 A,C,D 좌표 재설정
 
 monster = ['A','C','D']
 msidx = [0,0,0]

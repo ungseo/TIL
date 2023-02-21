@@ -1,30 +1,3 @@
-import sys
-sys.stdin = open('input.txt','r')
-def oselo(y,x,dir,player,step):
-    if step > 0 and pan[y][x] == player:
-        direction[dir] = 0
-        return
-    if step == 0:
-        pan[y][x] = player
-    ny = y + movy[dir]
-    nx = x + movx[dir]
-    if step == 0:
-        direction[dir] = 1
-    if direction[dir] == 0:
-        return
-    if 0 <= ny < n and 0 <= nx < n:
-            if pan[ny][nx] == 0:
-                direction[dir] = 0
-                return
-            else:
-                oselo(ny,nx,dir,player,step+1)
-            if player == 1:
-                pan[ny][nx] = 1
-            else:
-                pan[ny][nx] = 2
-
-
-
 T = int(input())
 for tc in range(1,T+1):
     n, m = map(int, input().split())
@@ -38,9 +11,49 @@ for tc in range(1,T+1):
 
     for _ in range(m):
         x, y, player = map(int,input().split())
-        for i in range(8):
-            oselo(y-1, x-1, i, player, 0)
+        x -= 1
+        y -= 1
+        for dr in range(8):
+            ny = y + movy[dr]
+            nx = x + movx[dr]
+            flag = 1
+            if ny < 0 or nx < 0 or ny >= n or nx >= n: continue
+            if pan[ny][nx] == 0: continue
+            if pan[ny][nx] != player:
+                while pan[ny][nx] != 0 or pan[ny][nx] == player:
+                    ny += movy[dr]
+                    nx += movx[dr]
+                    if 0 <= ny < n and 0 <= nx < n:
+                        if player == 1 and pan[ny][nx] == player:
+                            while 1:
+                                ny -= movy[dr]
+                                nx -= movx[dr]
+                                pan[ny][nx] = player
+                                if y == ny and x == nx:
+                                    flag = 0
+                                    break
+                        if flag == 0:
+                            break
+                        elif player == 2 and pan[ny][nx] == player:
+                            while 1:
+                                ny -= movy[dr]
+                                nx -= movx[dr]
+                                pan[ny][nx] = player
+                                if y == ny and x == nx:
+                                    flag = 0
+                                    break
+                        if flag == 0:
+                            break
+                    else: break
 
-    print(f'#{tc}')
-    print(pan, sep=' ')
+    black = 0
+    white = 0
+    for i in range(n):
+        for j in range(n):
+            if pan[i][j] == 1:
+                black += 1
+            elif pan[i][j] == 2:
+                white += 1
+
+    print(f'#{tc} {black} {white}')
 

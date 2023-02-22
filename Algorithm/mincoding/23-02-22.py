@@ -238,31 +238,174 @@
 #
 
 ## 다섯형제 1020
-def dfs(level, sum):
+# def dfs(level,idx, sum):
+#     global cnt
+#     if 10 <= sum <= 20:
+#         cnt += 1
+#         return
+#     if level == 5:
+#         return
+#
+#     for i in range(5):
+#         if idx >= i: continue
+#         dfs(level+1, i, sum+lst[i])
+# lst = list(map(int,input().split()))
+#
+#
+# cnt = 0
+# dfs(0,0,0)
+#
+# print(cnt)
+
+# lst = [5,4,3,9,1]
+#
+#
+#
+#
+#
+# candidates=['A','B','C','D']
+# path=['']*10
+#
+# def abc(level,start):
+#
+#     if level==4:
+#         for i in range(level):
+#             print(path[i],end=' ')
+#         print()
+#         return
+#     for i in range(start,4):
+#         path[level]=candidates[i]
+#         abc(level+1,i+1)
+# abc(0,0)  # level start(for문 시작점)
+#
+#
+# n=3
+# dice=[1,2,3,4]
+# path=['']*n
+# used=[0]*4
+# def abc(level):
+#      if level==n:
+#           for i in range(n):
+#                print(path[i],end=' ')
+#           print()
+#           return
+#      for i in range(4):
+#          if used[i]==1: continue  #
+#          path[level]=dice[i]
+#          used[i]=1               #
+#          abc(level+1)
+#          #path[level] =' '
+#          used[i]=0               #
+#
+# abc(0)
+#
+# n=int(input())
+# path=[0]*n
+#
+# def abc(level):
+#     if level==n:
+#         for i in range(n):
+#             print(path[i],end=' ')
+#         print()
+#         return
+#     for i in range(6):
+#         path[level]=i+1
+#         abc(level+1)
+#
+# abc(0)
+
+# lst= list(map(int,input().split()))
+# path = [0] * 5
+# cnt = 0
+# def dfs(level):
+#     global cnt
+#     if level == 5:
+#         sum = 0
+#         for j in range(5):
+#             if path[j] == 1:
+#                 sum += lst[j]
+#         if 10 <= sum  <= 20:
+#             cnt += 1
+#         return
+#
+#     for i in range(2):
+#         path[level] = i
+#         dfs(level+1)
+#
+# dfs(0)
+# print(cnt)
+
+# def dfs(level, idx):
+#     global sum, cnt
+#     if 10 <= sum <= 20:
+#         cnt += 1
+#         return
+#     if level == 5:
+#         return
+#
+#     for i in range(idx,5):
+#         if used[i] == 1:continue
+#         sum += lst[i]
+#         used[i] = 1
+#         dfs(level+1,idx+1)
+#         sum -= lst[i]
+#         used[i] = 0
+# lst =list(map(int,input().split()))
+#
+# used = [0] * 5
+# path = [0] * 5
+# sum = 0
+# cnt = 0
+# dfs(0,0)
+# # print(cnt)
+#
+#
+# lst= list(map(int,input().split()))
+# path = [0] * 5
+# cnt = 0
+# # def dfs(level):
+#     global cnt
+#     if level == 5:
+#         sum = 0
+#         for j in range(5):
+#             if path[j] == 1:
+#                 sum += lst[j]
+#         if 10 <= sum  <= 20:
+#             cnt += 1
+#         return
+#
+#     for i in range(2):
+#         path[level] = i
+#         dfs(level+1)
+#
+# dfs(0)
+# print(cnt)
+
+st = list(map(int, input().split()))
+cnt = 0
+path = [0]*5
+used = [0]*len(st)
+
+def abc(level, sum_val):
     global cnt
-    if 10 <= sum <= 20:
+
+    if 10 <= sum_val <= 20:
         cnt += 1
+
+    if sum_val > 20:
         return
+
     if level == 5:
         return
 
-    for i in range(0+level, 5):
-        if used[i] == 1: continue
-        dfs(level+1, sum+lst[i])
-        sum -= lst[i]
-lst = list(map(int,input().split()))
-used = [0] * 5
+    for i in range(len(st)):
+        if level > 0 and path[level-1] > st[i]: continue
+        if used[i] == 0:
+            path[level] = st[i]
+            used[i] = 1
+            abc(level+1, sum_val + st[i])
+            path[level] = ''
+            used[i] = 0
 
-cnt = 0
-dfs(0,0)
-
+abc(0, 0)
 print(cnt)
-
-
-
-
-
-
-
-
-

@@ -381,31 +381,79 @@
 # dfs(0)
 # print(cnt)
 
-st = list(map(int, input().split()))
+# st = list(map(int, input().split()))
+# cnt = 0
+# path = [0]*5
+# used = [0]*len(st)
+#
+# def abc(level, sum_val):
+#     global cnt
+#
+#     if 10 <= sum_val <= 20:
+#         cnt += 1
+#
+#     if sum_val > 20:
+#         return
+#
+#     if level == 5:
+#         return
+#
+#     for i in range(len(st)):
+#         if level > 0 and path[level-1] > st[i]: continue
+#         if used[i] == 0:
+#             path[level] = st[i]
+#             used[i] = 1
+#             abc(level+1, sum_val + st[i])
+#             path[level] = ''
+#             used[i] = 0
+#
+# abc(0, 0)
+# print(cnt)
+
+
+# lst = list(map(int,input().split()))
+# used = [0] * 5
+# cnt = 0
+# def dfs(level,sum):
+#     print(sum)
+#     global cnt
+#     if sum > 20:
+#         return
+#     if 10 <= sum <= 20:
+#         cnt+= 1
+#     if level == 5:
+#         return
+#     for i in range(level,5):
+#         if used[i] == 1: continue
+#         used[i] = 1
+#         dfs(level+1,sum+lst[i])
+#         used[i] = 0
+#
+# dfs(0,0)
+# print(cnt)
+
+lst = [1,2,3]
+path= [0] * 3
+used = [0] * 3
 cnt = 0
-path = [0]*5
-used = [0]*len(st)
-
-def abc(level, sum_val):
+def dfs(level,idx):
+    for i in range(level):
+        print(path[i],end=' ')
+    print()
     global cnt
+    cnt += 1
+    if level == 3: return
 
-    if 10 <= sum_val <= 20:
-        cnt += 1
+    for i in range(idx, 3):
+        path[level] = lst[i]
+        dfs(level+1,idx+1)
+        path[level] = 0
 
-    if sum_val > 20:
-        return
-
-    if level == 5:
-        return
-
-    for i in range(len(st)):
-        if level > 0 and path[level-1] > st[i]: continue
-        if used[i] == 0:
-            path[level] = st[i]
-            used[i] = 1
-            abc(level+1, sum_val + st[i])
-            path[level] = ''
-            used[i] = 0
-
-abc(0, 0)
+dfs(0,0)
 print(cnt)
+'''
+5 4 3 9 1
+'''
+#
+# arr = list(map(int,input().split()))
+# path = [0] * 5

@@ -1,42 +1,37 @@
 import sys
 sys.stdin = open('input.txt','r')
+
+from collections import deque
+def bfs(v):
+    q = deque()
+    q.append(v)
+    while q:
+        now = q.popleft()
+        for i in range(4):
+            ny = now[0] + movy[i]
+            nx = now[1] + movx[i]
+            if 0 <= ny < 100 and 0 <= nx < 100 and maze[ny][nx] == 0:
+                q.append((ny,nx))
+                maze[ny][nx] = 1
+            elif 0 <= ny < 100 and 0 <= nx < 100 and maze[ny][nx] == 3:
+                return 1
+
+movy = [-1, 0, 1, 0]
+movx = [0, 1, 0, -1]
+rst = 0
 for _ in range(1,11):
     tc = int(input())
     maze = [list(map(int,map(str,input()))) for _ in range(100)]
-    my = [-1,0,1,0]
-    mx = [0,1,0,-1]
+    flag = 1
     for i in range(100):
         for j in range(100):
             if maze[i][j] == 2:
-                sty, stx = i, j
-            if maze[i][j] == 3:
-                edy, edx = i, j
-    maze[sty][stx] = 1
-    flag = 0
-    while 1:
-        for dr in range(4):
-            py, px = sty, stx
-            sty = sty + my[dr]
-            stx = stx + mx[dr]
-            if sty < 0 or stx < 0 or sty >= 100 or stx >= 100: continue
-            if sty == edy and stx == edx:
-                flag = 1
+                if bfs((i,j)) == 1:
+                    print(f'#{tc} 1')
+                else:
+                    print(f'#{tc} 0')
+                flag = 0
                 break
-            if 0 <= sty+my[0] < 100 and 0 <= sty+my[2] < 100 and 0<= stx+mx[1] < 100 and 0 <= stx+mx[3] < 100:
-                if maze[sty+my[0]][stx+my[0]] == 1 and maze[sty+my[1]][stx+my[1]] == 1 and maze[sty+my[2]][stx+my[2]] == 1 and [sty+my[3]][stx+my[3]]== 1:
-                    while sty != py and stx != px:
-                        if dr == 0:
-                            sty += 1
-                        elif dr == 1:
-                            stx -= 1
-                        elif dr == 2:
-                            sty -= 1
-                        elif dr == 3:
-                            sty += 1
-            if maze[sty][stx] == 1: continue
-            maze[sty][stx] = 1
-        if flag == 1:
+        if flag == 0:
             break
-    print(f'#{tc} {flag}')
-
 

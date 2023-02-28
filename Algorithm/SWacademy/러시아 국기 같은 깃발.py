@@ -21,9 +21,12 @@ def johap(level):
                 temp += 1
         cnt += temp
         if cnt > minC:
+            cnt -= temp
             return
         johap(level+1)
         cnt -= temp
+        path[level] = ''
+
 
 T = int(input())
 for tc in range(1, T + 1):

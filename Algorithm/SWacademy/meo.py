@@ -1,40 +1,21 @@
-def check(y, x):
-    global flag
-    if y == edY and x == edX:
-        flag = 1
+def johap(level):
+    if level == n - 2:
+
+        print(path)
         return
 
-    for i in range(len(directionY)):
-        dy = directionY[i] + y
-        dx = directionX[i] + x
-        if dy < 0 or dx < 0 or dy > len(lst)-1 or dx > len(lst)-1: continue
-        if lst[dy][dx] == 1 or visit[dy][dx] == "P": continue
-        visit[dy][dx] = "P"
-        check(dy, dx)
-        if flag == 1:
-            return
-T = int(input())
-for tc in range(1, T+1):
-    n = int(input())
-    lst = []
-    for i in range(n):
-        lst.append(list(map(int, input())))
-    for i in range(n):
-        for j in range(n):
-            if lst[i][j] == 2:
-                stY = i
-                stX = j
-            if lst[i][j] == 3:
-                edY = i
-                edX = j
+    for i in range(3):
+        if level == 0 and i == 2: continue
+        if level == n - 3 and i == 0: continue
+        if level > 0:
+            if path[level - 1] == 'W' and color[i] == 'R': continue
+            if path[level - 1] == 'B' and color[i] == 'W': continue
+            if path[level - 1] == 'R' and color[i] == 'W': continue
+            if path[level - 1] == 'R' and color[i] == 'B': continue
 
-    directionY = [-1, 0, 0, 1]
-    directionX = [0, -1, 1, 0]
-    visit = [[0]*n for _ in range(n)]
-    flag = 0
-    visit[stY][stX] = "P"
-    check(stY, stX)
-    if flag == 1:
-        print(f"#{tc} {flag}")
-    else:
-        print(f"#{tc} {flag}")
+        path[level] = color[i]
+n = 5
+path = [0] * (n - 2)
+color = ['W','B','R']
+
+johap(0)

@@ -1,1 +1,3 @@
-people = list(map(int,list))
+import sys
+
+print(sys.version)

@@ -9,7 +9,10 @@ def check(a, b):
     for i in range(4):
         y = a + my[i]
         x = b + mx[i]
-        if 0 > y or 0 > x or 100 <= y or 100 <= x: continue
+
+        if 0 > y or 0 > x or 100 <= y or 100 <= x:
+            cnt += 1
+            continue
         if paper[y][x] == 0:
             cnt += 1
     return cnt
@@ -27,7 +30,7 @@ ct = 0
 for i in range(100):
     for j in range(100):
         if paper[i][j] == 1:
-            if check(i, j):
-                ct += check(i,j)
+            ct += check(i, j)
+
 
 print(ct)

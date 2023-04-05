@@ -7,12 +7,9 @@ def dfs(level, idx):
     global flag
     if flag == 1:
         return
-
-
-    for i in range(n):
+    for i in arr[idx]:
         if used[i] == 1: continue
-        if arr[idx][i] == 0: continue
-        if level == 4:
+        if level == 3:
             flag = 1
             return
         used[i] = 1
@@ -21,19 +18,25 @@ def dfs(level, idx):
 
 
 n, m = map(int, input().split())
-arr = [[0] * n for _ in range(n)]
+arr = [[]  for _ in range(n)]
 used = [0] * n
 flag = 0
 
-for i in range(m):
-    a, b = map(int, input().split())
-    arr[a][b] = 1
-    arr[b][a] = 1
+if m < 4:
+    print(flag)
 
-for i in range(n):
-    if 1 in arr[i]:
-        dfs(0, i)
-    if flag == 1:
-        break
+else:
+    for i in range(m):
+        a, b = map(int, input().split())
+        arr[a].append(b)
+        arr[b].append(a)
 
-print(flag)
+    for i in range(n):
+        if arr[i]:
+            used[i] = 1
+            dfs(0, i)
+            used[i] = 0
+        if flag == 1:
+            break
+
+    print(flag)

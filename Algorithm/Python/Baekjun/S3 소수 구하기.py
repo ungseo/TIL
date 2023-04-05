@@ -1,17 +1,15 @@
 import sys
-
 input = sys.stdin.readline
 
 m, n = map(int, input().split())
-nlst = list(range(m, n + 1))
+nlst = [1] * (n+1)
+a = int(n**(1/2))
+for i in range(2, a):
+    if nlst[i]:
+        if i >= m:
+            print(i)
+    for j in range(i+i, n+1, i):
+        if j % i == 0:
+            nlst[j] = 0
 
-for j in range(2, int(n ** (1 / 2))):
-    for i in range(len(nlst)):
-        if j == nlst[i]: continue
 
-        if nlst[i] % j == 0:
-            nlst[i] = 0
-
-for i in nlst:
-    if i == 0: continue
-    print(i)

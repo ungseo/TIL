@@ -1,3 +1,4 @@
-a = 1, 2
+lst = ['a', 'b', 'c', 'd']
+a = ','.join(lst)
 
 print(a)

@@ -10,7 +10,7 @@ for i in range(k):
 
 LAN.sort()
 
-st = 0
+st = 1
 ed = LAN[-1]
 mid = (st + ed) // 2
 ans = []
@@ -29,7 +29,6 @@ while st <= ed:
         ed = mid - 1
         mid = (st + ed) // 2
 
-if ans:
-    print(max(ans))
-else:
-    print(min(LAN))
+
+print(max(ans))
+

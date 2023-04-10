@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Create</h1>
+
+
+{% if request.user.is_authenticated %}
+<form action="{% url 'todos:create' %}" method='POST'>
+    {% csrf_token %}
+    {{form.as_p}}
+
+
+    <input type="submit" value='Create'>
+</form>
+
+{% else %}
+
+<form action="{% url 'accounts:login' %}" method='POST'>
+    {% csrf_token %}
+    {{form.as_p}}
+
+
+    <input type="submit" value='Create'>
+</form>
+
+{% endif %}
+
+
+
+
+{% endblock content %}
+
+
+
+
+
+

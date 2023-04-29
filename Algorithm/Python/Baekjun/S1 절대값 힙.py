@@ -1,18 +1,15 @@
 import sys
-from queue import PriorityQueue
+from deque import 
 
 input = sys.stdin.readline
+lst = []
 n = int(input())
-pQueue = PriorityQueue() # 우선순위 큐 생성
-
 for i in range(n):
-    x = int(input())
-    if x == 0:
-        if pQueue.empty():
+    a = int(input())
+    if a == 0:
+        if lst:
             print(0)
         else:
+            heapq.heappop(lst)
 
-            temp = pQueue.get()
-            print(str(temp[1]))
-    else:
-        pQueue.put((abs(x), x))
+a =

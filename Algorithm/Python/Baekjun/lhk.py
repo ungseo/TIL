@@ -1,4 +1,6 @@
-lst = ['a', 'b', 'c', 'd']
-a = ','.join(lst)
+arr = [[1,2,3,4,5],
+       [23,1,34,2],
+       [3,0,1,2,3]]
 
-print(a)
+min_h = min(arr)
+print(min_h)

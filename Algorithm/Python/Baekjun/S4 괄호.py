@@ -2,20 +2,19 @@ import sys
 
 input = sys.stdin.readline
 
-n = int(input())
-for i in range(n):
-    flag = 0
-    stack = []
-    check = list(input())
-    if len(check) % 2 == 0:
+T = int(input().rstrip())
+for tc in range(T):
+    stack = [0]
+    gwal = list(input().rstrip())
+    for i in range(len(gwal)):
+        if stack[-1] == '(':
+            if gwal[i] == ')':
+                stack.pop()
+            else:
+                stack.append('(')
+        else:
+            stack.append(gwal[i])
+    if stack == [0]:
+        print('YES')
+    else:
         print('NO')
-        flag = 1
-    if check[0] == ')':
-        print('NO')
-        flag = 1
-
-    if flag == 0:
-        for i in range(len(check)):
-            stack.append(check[i])
-            if stack[-2]
-
